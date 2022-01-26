@@ -7,7 +7,15 @@
 
 ## Requirements
 
-- Node
+- Node (see .node-version)
+    - a Node version manager is recommended. The environment this was built on uses [asdf](https://asdf-vm.com/)
+- [pnpm](https://pnpm.io/)
+
+## Dev
+
+- `pnpm install` to install dependencies
+- `pnpm start` to build and watch
+- `pnpm run build` to build
 
 ## License
 
