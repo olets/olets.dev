@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  content: ["./dist/**/*.html"],
+  content: ['./src/views/**/*.html.twig'],
   theme: {
     extend: {
       link: colors.blue,

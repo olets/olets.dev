@@ -1,0 +1,37 @@
+name: olets.dev
+version: 1.0.0
+description: Source for olets.dev
+main: index.js
+scripts:
+  build: pnpm clean && pnpm gulp build # && pnpm build:fonts
+  build:fonts: # pnpm build:fonts:some-font && pnpm build:fonts:some-other-font
+  # build:fonts:some-font: pnpm glyphhanger dist/*.html --subset=src/fonts/some-font.woff2 --formats=woff2 --output=dist --cssSelector=em
+  # build:fonts:some-other-font: pnpm glyphhanger dist/*.html --subset=src/fonts/some-other-font.woff2 --formats=woff2 --output=dist --cssSelector=em
+  clean: pnpm gulp clean
+  dev: pnpm clean && pnpm gulp dev # pnpm clean && pnpm dev:fonts && pnpm gulp dev
+  dev:fonts: # pnpm dev:fonts:some-font && pnpm dev:fonts:some-other-font
+  # dev:fonts:some-font: cp src/fonts/some-font.woff2 dist/some-font-subset.woff2
+  # dev:fonts:some-other-font: cp src/fonts/some-other-font.woff2 dist/some-other-font-subset.woff2
+keywords: []
+author: Henry Bley-Vroman <olets@olets.dev>
+license: SEE LICENSE IN LICENSE
+devDependencies:
+  autoprefixer: "^10.4.2"
+  browser-sync: "^2.27.7"
+  del: "^6.0.0"
+  glyphhanger: "^5.0.0"
+  gulp: "^4.0.2"
+  gulp-htmlmin: "^5.0.1"
+  gulp-postcss: "^9.0.1"
+  gulp-twig: "^1.2.0"
+  postcss: "^8.4.5"
+  tailwindcss: "^3.0.18"
+repository:
+  type: git
+  url: git+https://github.com/olets/olets.dev.git
+dependencies:
+  autoprefixer: "^10.4.2"
+  postcss: "^8.4.5"
+bugs:
+  url: https://github.com/olets/olets.dev/issues
+homepage: https://github.com/olets/olets.dev#readme
