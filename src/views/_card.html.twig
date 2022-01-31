@@ -1,0 +1,46 @@
+{% macro Card(props = {}) %}
+  {% set props = {
+    imgSrc: null,
+    description: null,
+    link: null,
+    title: null,
+  } | merge(props) %}
+
+  {% if not props.title %}
+    Card: title is required
+  {% else %}
+    <figure class="relative">
+      <img
+        alt=""
+        class="object-cover w-full rounded-t-2xl placeholder:shadow {{ props.description ? 'rounded-b-md' : 'rounded-b-2xl' }}"
+        src="{{ props.imgSrc }}"
+      >
+
+      <figcaption>
+        {% if props.link %}
+          <a
+            class="absolute inset-0 peer rounded-2xl focus:ring hover:ring"
+            href="{{ props.link }}"
+          >
+            <div class="sr-only">{{ props.title }}</div>
+          </a>
+        {% endif %}
+
+        {% if props.description %}
+          <div class="bg-white mt-3 p-4 rounded-t-md rounded-b-2xl shadow">
+            {% if props.title|length %}
+              <em
+                aria-hidden="true"
+                class="block font-semibold peer-focus:text-link-400 peer-hover:text-link-400 transition-colors"
+              >
+                <span>{{ props.title }}</span>
+              </em>
+            {% endif %}
+
+            {{ props.description|length ? props.description }}
+          </div>
+        {% endif %}
+      </figcaption>
+    </figure>
+  {% endif %}
+{% endmacro %}

@@ -1,50 +1,67 @@
+{%- from "_card.html.twig" import Card %}
+
 <!DOCTYPE html>
 <html class="antialiased" lang="en-US" dir="ltr">
   <head>
+    <title>olets.dev</title>
     <link rel="stylesheet" href="/styles.css">
   </head>
 
   <body class="bg-blue-100 flex flex-col min-h-screen">
-    <header class="p-5">Welcome</header>
+    <div class="fixed flex flex-col inset-0">
+      <div class="basis-1/2 bg-sky bg-cover bg-bottom"></div>
+      <div class="basis-1/2 bg-ocean bg-cover bg-top -my-px"></div>
+    </div>
 
-    <main class="flex flex-col flex-grow items-center justify-center ">
-      <ul class="gap-5 grid grid-cols-2">
-        <li class="bg-white border relative rounded-b-md">
-          <figure>
-            <img class="w-full h-40 rounded-t-md" src="https://olets.imgix.net/zsh-abbr.png" alt="">
+    {% set cards = [
+      {
+        description: "Auto-expanding abbreviations for zsh",
+        imgSrc: "https://olets.imgix.net/zsh-abbr.png",
+        link: "https://github.com/olets/zsh-abbr",
+        title: "zsh-abbr",
+      },
+      {
+        description: "",
+        imgSrc: "https://olets.imgix.net/git-replay.png",
+        link: "https://github.com/olets/git-replay",
+        title: "git-replay",
+      },
+      {
+        description: "",
+        imgSrc: "https://olets.imgix.net/hometown.png",
+        link: "https://github.com/olets/hometown-prompt",
+        title: "Hometown Prompt",
+      },
+      {
+        description: "",
+        imgSrc: "https://olets.imgix.net/git-prompt-kit.png",
+        link: "https://github.com/olets/git-prompt-kit",
+        title: "Git Prompt Kit",
+      },
+      {
+        description: "",
+        imgSrc: "https://olets.imgix.net/zsh-test-runner.png",
+        link: "https://github.com/olets/zsh-test-runner",
+        title: "zsh-test-runner",
+      },
+    ] %}
 
-            <figcaption class="p-4">
-              <a class="absolute inset-0 peer rounded-md focus:ring hover:ring" href="https://github.com/olets/zsh-abbr">
-                <div class="sr-only">zsh-abbr</div>
-              </a>
-
-              <em class="block font-semibold peer-focus:text-link-400 peer-hover:text-link-400 transition-colors" aria-hidden="true">
-                <span>zsh-abbr</span>
-              </em>
-
-              Auto-expanding abbreviations for zsh
-            </figcaption>
-          </figure>
+    <main class="container flex flex-col flex-grow items-center justify-center mx-auto p-4 relative">
+      <h1 class="sr-only">olets.dev</h1>
+      
+      <ul class="gap-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <li aria-role="presentation" class="col-span-2">
+          <div class="text-4xl" aria-hidden="true">olets.dev</div>
         </li>
 
-        <div class="border overflow-hidden rounded-md">
-          <img class="w-full h-40" src="https://olets.imgix.net/git-replay.png" alt="">
-        </div>
-
-        <div class="border overflow-hidden rounded-md">
-          <img class="w-full h-40" src="https://olets.imgix.net/hometown.png" alt="">
-        </div>
-
-        <div class="border overflow-hidden rounded-md">
-          <img class="w-full h-40" src="https://olets.imgix.net/git-prompt-kit.png" alt="">
-        </div>
-
-        <div class="border overflow-hidden rounded-md">
-          <img class="w-full h-40" src="https://olets.imgix.net/zsh-test-runner.png" alt="">
-        </div>
+        {% for card in cards %}
+          <li class="relative">
+            {{ Card(card)}}
+          </li>
+        {% endfor %}
       </ul>
     </main>
 
-    <footer class="p-5">© Copyright Henry Bley-Vroman, 2022-present</footer>
+    <footer class="p-5 relative">© Copyright Henry Bley-Vroman, 2022-present</footer>
   </body>
 </html>
