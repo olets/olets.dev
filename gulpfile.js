@@ -8,13 +8,14 @@ const twig = require("gulp-twig");
 const { dest, lastRun, parallel, series, src, watch: gulpWatch } = require("gulp");
 
 const distFolder = "dist"
-const stylesSrcGlobs = "src/styles/styles.css";
+const stylesSrcGlob = "src/styles/styles.css";
 
 const config = {
   cleanGlobs: [`${distFolder}/**/*`, `!${distFolder}/.gitkeep`],
-  stylesSrcGlobs: stylesSrcGlobs,
-  stylesWatchGlobs: [stylesSrcGlobs, "tailwind.config.js"],
-  viewsGlobs: "src/views/**/[^_]*.twig",
+  stylesSrcGlobs: stylesSrcGlob,
+  stylesWatchGlobs: [stylesSrcGlob, "tailwind.config.js"],
+  viewsSrcGlobs: "src/views/**/[^_]*.twig",
+  viewsWatchGlobs: "src/views/**/*.twig",
   staticGlobs: "src/static/**/*",
 };
 
@@ -50,7 +51,7 @@ function styles() {
 }
 
 function views() {
-  return src(config.viewsGlobs)
+  return src(config.viewsSrcGlobs)
     .pipe(twig({ extname: '' }))
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -62,7 +63,7 @@ function views() {
 }
 
 function watch(done) {
-  gulpWatch(config.viewsGlobs, series(parallel(styles, views), reload));
+  gulpWatch(config.viewsWatchGlobs, series(parallel(styles, views), reload));
   gulpWatch(config.staticGlobs, series(static, reload));
   gulpWatch(config.stylesWatchGlobs, series(styles, reload));
   
