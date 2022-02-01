@@ -34,9 +34,6 @@ devDependencies:
 repository:
   type: git
   url: git+https://github.com/olets/olets.dev.git
-dependencies:
-  autoprefixer: ^10.4.2
-  postcss: ^8.4.5
 bugs:
   url: https://github.com/olets/olets.dev/issues
 homepage: https://github.com/olets/olets.dev#readme
