@@ -1,0 +1,27 @@
+openSource:
+  heading: "open source"
+  items:
+    - description: Auto-expanding abbreviations for zsh
+      imageFileName: zsh-abbr.jpg
+      link: https://github.com/olets/zsh-abbr
+      title: zsh-abbr
+      
+    - description: ''
+      imageFileName: git-replay.jpg
+      link: https://github.com/olets/git-replay
+      title: git-replay
+      
+    - description: ''
+      imageFileName: hometown.jpg
+      link: https://github.com/olets/hometown-prompt
+      title: Hometown Prompt
+      
+    - description: ''
+      imageFileName: git-prompt-kit.jpg
+      link: https://github.com/olets/git-prompt-kit
+      title: Git Prompt Kit
+      
+    - description: ''
+      imageFileName: zsh-test-runner.jpg
+      link: https://github.com/olets/zsh-test-runner
+      title: zsh-test-runner

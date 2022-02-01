@@ -11,6 +11,7 @@ specifiers:
   gulp-twig: ^1.2.0
   postcss: ^8.4.5
   tailwindcss: ^3.0.18
+  yaml: ^1.10.2
 
 dependencies:
   autoprefixer: 10.4.2_postcss@8.4.5
@@ -25,6 +26,7 @@ devDependencies:
   gulp-postcss: 9.0.1_postcss@8.4.5
   gulp-twig: 1.2.0
   tailwindcss: 3.0.18_ef48b3b8837f8a23677bffe8f9cd866d
+  yaml: 1.10.2
 
 packages:
 
