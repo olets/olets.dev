@@ -1,6 +1,6 @@
 {% macro Card(props = {}) %}
   {% set props = {
-    imgSrc: null,
+    imageFileName: null,
     description: null,
     link: null,
     title: null,
@@ -13,7 +13,7 @@
       <img
         alt=""
         class="object-cover w-full rounded-t-2xl placeholder:shadow {{ props.description ? 'rounded-b-md' : 'rounded-b-2xl' }}"
-        src="{{ props.imgSrc }}"
+        src="https://olets.imgix.net/{{ props.imageFileName }}?w=700&ar=1280:640&fit=crop"
       >
 
       <figcaption>
