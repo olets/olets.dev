@@ -4,8 +4,7 @@
 
 @layer base {
   em {
-    font-style: normal;
-    @apply font-serif;
+    @apply font-bold not-italic;
   }
 }
 
@@ -16,11 +15,11 @@
 }
 
 @font-face {
-  font-family: "Modak";
-  src: url(Modak-Regular-subset.woff2) format("woff2");
+  font-family: "Blocked Off";
+  src: url(BlockedOff-subset.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: "UnifrakturCook";
-  src: url(UnifrakturCook-Bold-subset.woff2) format("woff2");
+  font-family: "Hey August";
+  src: url(HeyAugust-subset.woff2) format("woff2");
 }
