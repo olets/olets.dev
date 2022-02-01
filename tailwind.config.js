@@ -12,7 +12,19 @@ module.exports = {
           ...defaultTheme.fontFamily.serif,
         ],
       },
-      link: colors.blue,
+      colors: {
+        black: "#474747",
+        link: {
+          ...colors.blue,
+          DEFAULT: colors.blue['500'],
+        },
+      },
+      ringColor: ({ theme }) => ({
+        DEFAULT: theme('colors.link.DEFAULT'),
+      }),
+      textDecorationColor: ({ theme }) => ({
+        ...theme('colors'),
+      }),
     },
   },
 }

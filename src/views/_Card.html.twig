@@ -9,38 +9,44 @@
   {% if not props.title %}
     Card: title is required
   {% else %}
-    <figure class="relative">
+    <article class="group relative">
+      {% if props.link %}
+        <a
+          class="absolute inset-0 peer rounded-2xl focus:outline-none"
+          href="{{ props.link }}"
+        >
+          <div class="sr-only">{{ props.title }}</div>
+        </a>
+      {% endif %}
+
       <img
         alt=""
-        class="object-cover w-full rounded-t-2xl placeholder:shadow {{ props.description ? 'rounded-b-md' : 'rounded-b-2xl' }}"
+        class="
+          w-full rounded-t-2xl shadow transition-shadow ring-offset-2
+          peer-focus:ring peer-hover:ring
+          {{ props.description ? 'rounded-b-md' : 'rounded-b-2xl' }}
+        "
         src="https://olets.imgix.net/{{ props.imageFileName }}?w=700&ar=1280:640&fit=crop"
       >
 
-      <figcaption>
-        {% if props.link %}
-          <a
-            class="absolute inset-0 peer rounded-2xl focus:ring hover:ring"
-            href="{{ props.link }}"
-          >
-            <div class="sr-only">{{ props.title }}</div>
-          </a>
-        {% endif %}
+      {% if props.description %}
+        <div class="
+          bg-white mt-3 rounded-t-md rounded-b-2xl transition underline
+          peer-focus:text-link peer-focus:decoration-link
+          peer-hover:text-link peer-hover:decoration-link
+        ">
+          {% if props.title|length %}
+            <em
+              aria-hidden="true"
+              class="block font-semibold"
+            >
+              <span>{{ props.title }}</span>
+            </em>
+          {% endif %}
 
-        {% if props.description %}
-          <div class="bg-white mt-3 p-4 rounded-t-md rounded-b-2xl shadow">
-            {% if props.title|length %}
-              <em
-                aria-hidden="true"
-                class="block font-semibold peer-focus:text-link-400 peer-hover:text-link-400 transition-colors"
-              >
-                <span>{{ props.title }}</span>
-              </em>
-            {% endif %}
-
-            {{ props.description|length ? props.description }}
-          </div>
-        {% endif %}
-      </figcaption>
-    </figure>
+          {{ props.description|length ? props.description }}
+        </div>
+      {% endif %}
+    </article>
   {% endif %}
 {% endmacro %}
