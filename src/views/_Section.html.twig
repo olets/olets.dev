@@ -1,0 +1,22 @@
+{% macro Section(props = {}) %}
+  {% set props = {
+    heading: null,
+    cards: [],
+  } | merge(props) %}
+
+  {% from "_Card.html.twig" import Card %}
+  
+  <div class="gap-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div aria-role="presentation" class="col-span-2">
+      <h1 class="font-serif text-9xl">
+        {{ props.heading }}
+      </h1>
+    </div>
+
+    {% for card in props.cards %}
+      <article class="relative">
+        {{ Card(card) }}
+      </article>
+    {% endfor %}
+  </div>
+{% endmacro %}
