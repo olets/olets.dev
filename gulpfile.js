@@ -33,6 +33,7 @@ function reload(done) {
 
 function serve(done) {
   browserSync.init({
+    open: false,
     server: { baseDir: distFolder }
   });
 
