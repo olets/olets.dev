@@ -14,7 +14,7 @@
   }
 
   a {
-    @apply decoration-link focus:text-link hover:text-link underline;
+    @apply decoration-link focus:text-link hover:text-link transition-colors underline;
   }
 
   em {
