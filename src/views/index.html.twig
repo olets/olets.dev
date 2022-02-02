@@ -2,8 +2,27 @@
 
 {% block content %}
   <div class="space-y-12 md:space-y-16 lg:space-y-20 w-full">
-    {% include "_bio.html.twig" %}
-    {% include "_articles.html.twig" %}
-    {% include "_open-source.html.twig" %}
+    <header class="space-y-12 md:space-y-16 lg:space-y-20">
+      {% include "_bio.html.twig" %}
+      
+      <nav class="md:sr-only">
+        <div class="sr-only">Navigation</div>
+
+        <ul class="flex gap-4">
+          <li><a href="#latest-articles">Latest Artices</a></li>
+          <li><a href="#software">Software</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="space-y-12 md:space-y-16 lg:space-y-20">
+      <section id="latest-articles">
+        {% include "_articles.html.twig" %}
+      </section>
+
+      <section id="software">
+        {% include "_open-source.html.twig" %}
+      </section>
+    </main>
   </div>
 {% endblock %}
