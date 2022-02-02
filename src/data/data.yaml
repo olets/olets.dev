@@ -2,11 +2,11 @@ articles:
   heading: latest articles
   posts:
     -
-      date: January 30, 2020
+      date: January 26, 2022
       description: on viget.com
-      imageFilename: post-fish-shell.jpg
-      link: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
-      title: Try Out Fish For Your Command Line Shell
+      imageFilename: post-github-actions.jpg
+      link: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
+      title: Automating build/deploy CI/CD with GitHub Actions
     -
       date: March 26, 2020
       description: on viget.com
@@ -14,11 +14,11 @@ articles:
       link: https://www.viget.com/articles/cli-equivalents-for-common-mamp-pro-and-sequel-pro-tasks/
       title: CLI Equivalents for Common MAMP PRO and Sequel Pro Tasks
     -
-      date: January 26, 2022
+      date: January 30, 2020
       description: on viget.com
-      imageFilename: post-github-actions.jpg
-      link: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
-      title: Automating build/deploy CI/CD with GitHub Actions
+      imageFilename: post-fish-shell.jpg
+      link: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
+      title: Try Out Fish For Your Command Line Shell
     -
       date: February 27, 2020
       description: on viget.com
@@ -50,7 +50,7 @@ bio:
   summary: >
     (pronouns he/him, pronounced <a href="http://ipa-reader.xyz/?text=%CB%88h%C9%9Bn%C9%B9i%20bla%C9%AA%20%CB%88v%C9%B9%C9%99%CA%8Am%C9%99n">/ˈhɛn.ɹi blaɪ ˈvɹəʊmən/</a>)
 
-    builds things you see on the web, creates tools to improve other builders' daily experience, and strives to support safety, kindness, and welcoming in his places of work and in the tech industry at large.
+    builds things you see on the web, creates tools to improve other builders' daily experience, teaches and mentors at work and in the tech community, and strives to support safe, kind, fair, and welcoming cultures.
 
     At <a href="http://viget.com">Viget</a> he is an established Senior UI Developer (<a href="https://www.viget.com/about/team/hbley-vroman/">bio and articles</a>), and is co-chair of the company DEI Advisory Committee.
     
