@@ -11,6 +11,14 @@
     @apply font-bold not-italic;
   }
 
+  h1 {
+    @apply font-serif text-5xl md:text-7xl lg:text-9xl;
+  }
+
+  h2 {
+    @apply font-serif text-5xl md:text-6xl lg:text-8xl;
+  }
+
   svg {
     path {
       fill: currentColor;
