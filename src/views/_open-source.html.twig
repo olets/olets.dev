@@ -1,13 +1,9 @@
 {% from "_Card.html.twig" import Card %}
-{% from "_Heading.html.twig" import Heading %}
 {% from "_Text.html.twig" import Text %}
 
 <section>
   <div class="flex justify-between">
-    {{ Heading({
-      content: data.openSource.heading,
-      tag: 'h2',
-    }) }}
+    <h2 class="heading-2">{{ data.openSource.heading }}</h2>
 
     <div>{{ data.openSource.details|raw }}</div>
   </div>

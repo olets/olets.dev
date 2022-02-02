@@ -1,12 +1,8 @@
 {% from "_Card.html.twig" import Card %}
-{% from "_Heading.html.twig" import Heading %}
 {% from "_Text.html.twig" import Text %}
 
 <section>
-  {{ Heading({
-    content: data.articles.heading,
-    tag: "h2",
-  }) }}
+  <h2 class="heading-2">{{ content: data.articles.heading }}</h2>
 
   {% if data.articles.summary|length %}
     <div class="mt-8">

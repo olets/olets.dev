@@ -11,14 +11,6 @@
     @apply font-bold not-italic;
   }
 
-  h1 {
-    @apply font-serif text-5xl md:text-7xl lg:text-9xl;
-  }
-
-  h2 {
-    @apply font-serif text-5xl md:text-6xl lg:text-8xl;
-  }
-
   svg {
     path {
       fill: currentColor;
@@ -29,6 +21,14 @@
 @layer components {
   .groundhog {
     @apply absolute bg-center bg-contain bg-groundhog inset-10 sm:inset-12 md:inset-20 lg:inset-24 xl:inset-32 p-5 sm:p-10 md:p-20 lg:p-32 xl:p-40;
+  }
+
+  .heading-1 {
+    @apply font-serif text-5xl md:text-7xl lg:text-9xl;
+  }
+
+  .heading-2 {
+    @apply font-serif text-5xl md:text-6xl lg:text-8xl;
   }
 }
 
