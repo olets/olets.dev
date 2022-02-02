@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Blocked Off";
+    src: url(BlockedOff-subset.woff2) format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Hey August";
+    src: url(HeyAugust-subset.woff2) format("woff2");
+  }
+
   a {
     @apply decoration-link focus:text-link hover:text-link underline;
   }
@@ -30,14 +40,4 @@
   .heading-2 {
     @apply font-serif text-5xl md:text-6xl lg:text-8xl;
   }
-}
-
-@font-face {
-  font-family: "Blocked Off";
-  src: url(BlockedOff-subset.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "Hey August";
-  src: url(HeyAugust-subset.woff2) format("woff2");
 }
