@@ -3,7 +3,7 @@ version: 1.0.0
 description: Source for olets.dev
 main: index.js
 scripts:
-  build: pnpm clean && pnpm gulp build && pnpm build:fonts
+  build: pnpm clean && pnpm gulp build && pnpm dev:fonts # build:fonts
   build:fonts: >-
     pnpm glyphhanger dist/*.html --subset=src/fonts/HeyAugust.woff2
     --formats=woff2 --output=dist --cssSelector=.font-serif
