@@ -6,7 +6,7 @@ scripts:
   build: pnpm clean && pnpm gulp build && pnpm build:fonts
   build:fonts: >-
     pnpm glyphhanger dist/*.html --subset=src/fonts/HeyAugust.woff2
-    --formats=woff2 --output=dist --cssSelector=em
+    --formats=woff2 --output=dist --cssSelector=.font-serif
   clean: pnpm gulp clean
   dev: pnpm clean && pnpm dev:fonts && pnpm gulp dev
   dev:fonts: cp src/fonts/HeyAugust.woff2 dist/HeyAugust-subset.woff2
