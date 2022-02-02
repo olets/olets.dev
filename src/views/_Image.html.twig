@@ -1,0 +1,15 @@
+{% macro Image(props = {}) %}
+  {% set props = {
+    alt: null,
+    classes: null,
+    filename: null,
+    imgixParams: null,
+  } | merge(props) %}
+
+  <img
+    alt="{{ props.alt }}"
+    class="{{ props.classes }}"
+    src="https://olets.imgix.net/{{ props.filename }}?{{ props.imgixParams }}"
+    onerror="this.onerror=null; this.src='beach.jpg'"
+  >
+{% endmacro %}
