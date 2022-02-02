@@ -5,6 +5,9 @@ module.exports = {
   content: ['./src/views/**/*.html.twig'],
   theme: {
     extend: {
+      aspectRatio: {
+        card: '1280 / 640',
+      },
       fontFamily: {
         serif: [
           'Hey August',

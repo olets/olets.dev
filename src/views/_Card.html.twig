@@ -22,11 +22,12 @@
       <img
         alt=""
         class="
-          w-full rounded-t-2xl shadow transition-shadow ring-offset-2
+          aspect-card border w-full rounded-t-2xl shadow transition-shadow ring-offset-2
           peer-focus:ring peer-hover:ring
           {{ props.description ? 'rounded-b-md' : 'rounded-b-2xl' }}
         "
         src="https://olets.imgix.net/{{ props.imageFileName }}?w=700&ar=1280:640&fit=crop"
+        onerror="this.onerror=null; this.src='beach.jpg'"
       >
 
       {% if props.description %}
