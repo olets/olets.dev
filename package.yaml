@@ -4,18 +4,12 @@ description: Source for olets.dev
 main: index.js
 scripts:
   build: pnpm clean && pnpm gulp build && pnpm build:fonts
-  build:fonts: pnpm build:fonts:hey-august && pnpm build:fonts:blocked-off
-  build:fonts:blocked-off: >-
-    pnpm glyphhanger dist/*.html --subset=src/fonts/BlockedOff.woff2
-    --formats=woff2 --output=dist --cssSelector=em
-  build:fonts:hey-august: >-
+  build:fonts: >-
     pnpm glyphhanger dist/*.html --subset=src/fonts/HeyAugust.woff2
     --formats=woff2 --output=dist --cssSelector=em
   clean: pnpm gulp clean
   dev: pnpm clean && pnpm dev:fonts && pnpm gulp dev
-  dev:fonts: pnpm dev:fonts:hey-august && pnpm dev:fonts:blocked-off
-  dev:fonts:blocked-off: cp src/fonts/BlockedOff.woff2 dist/BlockedOff-subset.woff2
-  dev:fonts:hey-august: cp src/fonts/HeyAugust.woff2 dist/HeyAugust-subset.woff2
+  dev:fonts: cp src/fonts/HeyAugust.woff2 dist/HeyAugust-subset.woff2
 keywords: []
 author: Henry Bley-Vroman <olets@olets.dev>
 license: SEE LICENSE IN LICENSE

@@ -11,7 +11,6 @@ module.exports = {
       fontFamily: {
         serif: [
           'Hey August',
-          'Blocked Off',
           ...defaultTheme.fontFamily.serif,
         ],
       },
