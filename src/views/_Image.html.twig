@@ -3,13 +3,13 @@
     alt: null,
     classes: null,
     filename: null,
-    imgixParams: null,
+    imgixConfig: null,
   } | merge(props) %}
 
   <img
     alt="{{ props.alt }}"
     class="{{ props.classes }}"
-    src="https://olets.imgix.net/{{ props.filename }}?{{ props.imgixParams }}"
+    src="https://olets.imgix.net/{{ props.filename }}?{{ props.Config|url_encode }}"
     onerror="this.onerror=null; this.src='beach.jpg'"
   >
 {% endmacro %}

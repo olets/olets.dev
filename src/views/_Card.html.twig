@@ -28,7 +28,11 @@
       {{ Image({
         classes: classes,
         filename: props.imageFilename,
-        imgixParams: "w=700&ar=1280:640&fit=crop",
+        imgixConfig: {
+          ar: "1280:640",
+          fit: "crop",
+          w: 700,
+        },
       }) }}
 
       {% if props.description %}
