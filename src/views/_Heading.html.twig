@@ -1,0 +1,10 @@
+{% macro Heading(props = {}) %}
+  {% set props = {
+    content: null,
+    tag: 'div',
+  }|merge(props) %}
+
+  <{{ props.tag }} class="font-serif text-7xl lg:text-9xl">
+    {{ props.content }}
+  </{{ props.tag }}>
+{% endmacro %}

@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  a {
+    @apply decoration-link focus:text-link hover:text-link underline;
+  }
+
   em {
     @apply font-bold not-italic;
+  }
+
+  svg {
+    path {
+      fill: currentColor;
+    }
   }
 }
 

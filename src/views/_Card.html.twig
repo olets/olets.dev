@@ -4,7 +4,7 @@
     description: null,
     link: null,
     title: null,
-  } | merge(props) %}
+  }|merge(props) %}
 
   {% from "_Image.html.twig" import Image %}
 
@@ -12,7 +12,7 @@
     <article class="group relative">
       {% if props.link %}
         <a
-          class="absolute inset-0 peer rounded-2xl focus:outline-none"
+          class="absolute focus:outline-none inset-0 peer rounded-2xl"
           href="{{ props.link }}"
         >
           <div class="sr-only">{{ props.title }}</div>
@@ -38,8 +38,8 @@
       {% if props.description %}
         <div class="
           bg-white mt-3 rounded-t-md rounded-b-2xl transition underline
-          peer-focus:text-link peer-focus:decoration-link
-          peer-hover:text-link peer-hover:decoration-link
+          peer-focus:text-link
+          peer-hover:text-link
         ">
           {% if props.title|length %}
             <em

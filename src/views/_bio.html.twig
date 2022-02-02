@@ -1,0 +1,62 @@
+{% from "_Heading.html.twig" import Heading %}
+{% from "_Image.html.twig" import Image %}
+{% from "_Text.html.twig" import Text %}
+
+<section>
+  <div class="flex justify-between">
+    <div class="flex-grow">
+      {{ Heading({
+        content: "Henry <span class='whitespace-nowrap'>Bley-Vroman</span>",
+        tag: 'h1',
+      }) }}
+
+      <div class="mt-8">
+        {{ Text({
+          content: data.bio.summary|raw,
+        }) }}
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center ml-8">
+      <a class="block group relative" href="{{ data.bio.avatar.link }}">
+        {{ Image({
+          classes: "rounded-full w-32",
+          filename: data.bio.avatar.filename,
+          imgixConfig: {
+            ar: "1:1",
+            fit: "crop",
+            w: 160,
+          },
+        }) }}
+
+        {{ Image({
+          classes: "absolute focus:opacity-100 hover:opacity-100 inset-0 opacity-0 rounded-full transition-opacity",
+          filename: data.bio.avatar.hoverFilename,
+          imgixConfig: {
+            ar: "1:1",
+            fit: "crop",
+            w: 160,
+          },
+        }) }}
+      </a>
+
+      <div>
+        <h2 class="sr-only">Social links</h2>
+
+        <ul class="flex flex-col justify-center list-none mt-8 sm:flex-row sm:space-x-4 sm:space-y-0 space-y-4">
+          {% for link in data.bio.socialLinks %}
+            <li>
+              <a href={{ link.href }}>
+                <span class="sr-only">{{ link.platform }}</span>
+                
+                <span class="block focus:text-link hover:text-link transition-colors w-12" aria-hidden="true">
+                  {% include "_" ~ link.platform|capitalize ~ ".svg.twig" %}
+                </span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

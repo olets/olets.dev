@@ -1,40 +1,61 @@
-sections:
-  -
-    heading: Henry Bley-Vroman
-    headingLevel: 1
-  -
-    heading: "open source"
-    summary:
-      Ullamco quis ipsum minim sint id commodo irure labore sit minim elit. Consectetur in irure elit veniam do. Laboris enim proident commodo amet. Duis veniam anim aliqua veniam incididunt amet sunt eu elit duis irure. Nulla dolore reprehenderit pariatur aliqua culpa anim occaecat esse culpa occaecat laborum officia minim. Tempor est esse tempor id labore aliquip irure Lorem sint deserunt ex ex id amet.
+bio:
+  avatar:
+    link: https://github.com/olets
+    filename: portrait-bw.jpg
+    hoverFilename: portrait-colorized.jpg
+  socialLinks:
+    -
+      platform: github
+      href: https://www.github.com/olets
+    -
+      platform: reddit
+      href: https://www.reddit.com/u/olets
+    -
+      platform: twitter
+      href: https://www.twitter.com/olets
 
-      asdfUllamco quis ipsum minim sint id commodo irure labore sit minim elit. Consectetur in irure elit veniam do. Laboris enim proident commodo amet. Duis veniam anim aliqua veniam incididunt amet sunt eu elit duis irure. Nulla dolore reprehenderit pariatur aliqua culpa anim occaecat esse culpa occaecat laborum officia minim. Tempor est esse tempor id labore aliquip irure Lorem sint deserunt ex ex id amet.
-    items:
-      - description: Auto-expanding abbreviations for zsh
-        imageFilename: zsh-abbr.jpg
-        link: https://github.com/olets/zsh-abbr
-        title: zsh-abbr
-        
-      - description: Automate the rebasing of Git branches and creation of stage branches
-        imageFilename: git-replay.jpg
-        link: https://github.com/olets/git-replay
-        title: git-replay
-        
-      - description: Feature rich, high performance Git-aware zsh theme
-        imageFilename: hometown.jpg
-        link: https://github.com/olets/hometown-prompt
-        title: Hometown Prompt
-        
-      - description: Configurable set of components for creating feature rich, high performance Git-aware zsh themes with minimal coding
-        imageFilename: git-prompt-kit.jpg
-        link: https://github.com/olets/git-prompt-kit
-        title: Git Prompt Kit
-        
-      - description: Straight-forward tests and coverage reports for zsh and —under zsh's emulation— csh, ksh, and sh
-        imageFilename: zsh-test-runner.jpg
-        link: https://github.com/olets/zsh-test-runner
-        title: zsh-test-runner
-        
-      - description: A zsh plugin for informative terminal window titles
-        imageFilename: zsh-window-title.jpg
-        link: https://github.com/olets/zsh-window-title.jpg
-        title: zsh-window-title
+  summary: >
+    (pronouns he/him, pronounced <a href="http://ipa-reader.xyz/?text=%CB%88h%C9%9Bn%C9%B9i%20bla%C9%AA%20%CB%88v%C9%B9%C9%99%CA%8Am%C9%99n">/ˈhɛn.ɹi blaɪ ˈvɹəʊmən/</a>)
+    
+    builds things you see on the web, creates tools to improve other builders' daily experience, and strives to make the tech industry a safer, kinder, and more welcoming.
+
+    At <a href="http://viget.com">Viget</a> he is an established Senior UI Developer, and is co-chair of the company DEI Advisory Committee. Previously: developer at <a href="http://newmediacampaigns.com">NMC</a>, neurobiopsychopharacology doctoral student at <a href="https://www.bu.edu/psych/academics/phd/bbc/">Boston University</a>.
+
+    Find him online as olets (<a href="http://ipa-reader.xyz/?text=o%CA%8A%20l%C9%9Bts">/oʊ lɛts/</a>).
+    
+footer:
+  sourceLink: https://github.com/olets/olets.dev
+openSource:
+  heading: "software"
+  summary:
+    Ullamco quis ipsum minim sint id commodo irure labore sit minim elit. Consectetur in irure elit veniam do. Laboris enim proident commodo amet. Duis veniam anim aliqua veniam incididunt amet sunt eu elit duis irure. Nulla dolore reprehenderit pariatur aliqua culpa anim occaecat esse culpa occaecat laborum officia minim. Tempor est esse tempor id labore aliquip irure Lorem sint deserunt ex ex id amet.
+  items:
+    - description: Auto-expanding abbreviations for zsh
+      imageFilename: zsh-abbr.jpg
+      link: https://github.com/olets/zsh-abbr
+      title: zsh-abbr
+      
+    - description: Automate the rebasing of Git branches and creation of stage branches
+      imageFilename: git-replay.jpg
+      link: https://github.com/olets/git-replay
+      title: git-replay
+      
+    - description: Feature rich, high performance Git-aware zsh theme
+      imageFilename: hometown.jpg
+      link: https://github.com/olets/hometown-prompt
+      title: Hometown Prompt
+      
+    - description: Configurable set of components for creating feature rich, high performance Git-aware zsh themes with minimal coding
+      imageFilename: git-prompt-kit.jpg
+      link: https://github.com/olets/git-prompt-kit
+      title: Git Prompt Kit
+      
+    - description: Straight-forward tests and coverage reports for zsh and —under zsh's emulation— csh, ksh, and sh
+      imageFilename: zsh-test-runner.jpg
+      link: https://github.com/olets/zsh-test-runner
+      title: zsh-test-runner
+      
+    - description: A zsh plugin for informative terminal window titles
+      imageFilename: zsh-window-title.jpg
+      link: https://github.com/olets/zsh-window-title.jpg
+      title: zsh-window-title

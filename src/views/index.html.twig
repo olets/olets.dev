@@ -1,11 +1,8 @@
 {% extends "_layout.html.twig" %}
 
-{% from "_Section.html.twig" import Section %}
-
 {% block content %}
-  <div class="space-y-20">
-    {% for section in context.sections %}
-      {{ Section(section) }}
-    {% endfor %}
+  <div class="py-10 space-y-20 w-full">
+    {% include "_bio.html.twig" %}
+    {% include "_open-source.html.twig" %}
   </div>
 {% endblock %}

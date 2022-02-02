@@ -5,6 +5,7 @@ const fs = require("fs");
 const htmlmin = require('gulp-htmlmin');
 const postcss = require('gulp-postcss');
 const tailwindcss = require('tailwindcss');
+const tailwindcssNesting = require('tailwindcss/nesting');
 const twig = require("gulp-twig");
 const YAML = require('yaml');
 const { dest, lastRun, parallel, series, src, watch: gulpWatch } = require("gulp");
@@ -48,6 +49,7 @@ function static() {
 function styles() {
   return src(config.stylesSrcGlobs)
     .pipe(postcss([
+      tailwindcssNesting(),
       tailwindcss(),
       autoprefixer(),
     ]))
@@ -61,7 +63,7 @@ function views() {
   return src(config.viewsSrcGlobs)
     .pipe(twig({
       data: {
-        context: data,
+        data: data,
       },
       extname: '',
     }))
