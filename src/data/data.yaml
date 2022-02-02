@@ -1,18 +1,49 @@
+articles:
+  heading: articles
+  posts:
+    -
+      date: January 30, 2020
+      description: on viget.com
+      imageFilename: post-fish-shell.jpg
+      link: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
+      title: Try Out Fish For Your Command Line Shell
+    -
+      date: March 26, 2020
+      description: on viget.com
+      imageFilename: post-mamp-mysql-cli.jpg
+      link: https://www.viget.com/articles/cli-equivalents-for-common-mamp-pro-and-sequel-pro-tasks/
+      title: CLI Equivalents for Common MAMP PRO and Sequel Pro Tasks
+    -
+      date: January 26, 2022
+      description: on viget.com
+      imageFilename: post-github-actions.jpg
+      link: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
+      title: Automating build/deploy CI/CD with GitHub Actions
+    -
+      date: February 27, 2020
+      description: on viget.com
+      imageFilename: post-gitrevisions.jpg
+      link: https://www.viget.com/articles/committed-to-the-wrong-branch-upstream-and-to-the-rescue/
+      title: Committed to the wrong branch? -, @{upstream}, and @{-1} to the rescue
+  summary:
+    Amet do laboris aliqua do laborum adipisicing elit ipsum occaecat id. Amet commodo excepteur enim et minim. Dolor consectetur qui eiusmod occaecat aliquip magna velit ea eu consectetur esse consectetur adipisicing aute. Eu irure voluptate in ut consequat sit ad aliqua Lorem occaecat sunt.
+
 bio:
   avatar:
+    hoverFilename: portrait-colorized.jpg
     link: https://github.com/olets
     filename: portrait-bw.jpg
-    hoverFilename: portrait-colorized.jpg
+
   socialLinks:
     -
-      platform: github
       href: https://www.github.com/olets
+      platform: github
     -
-      platform: reddit
       href: https://www.reddit.com/u/olets
+      platform: reddit
     -
-      platform: twitter
       href: https://www.twitter.com/olets
+      platform: twitter
 
   summary: >
     (pronouns he/him, pronounced <a href="http://ipa-reader.xyz/?text=%CB%88h%C9%9Bn%C9%B9i%20bla%C9%AA%20%CB%88v%C9%B9%C9%99%CA%8Am%C9%99n">/ˈhɛn.ɹi blaɪ ˈvɹəʊmən/</a>)
@@ -28,8 +59,6 @@ footer:
 
 openSource:
   heading: "software"
-  summary:
-    Ullamco quis ipsum minim sint id commodo irure labore sit minim elit. Consectetur in irure elit veniam do. Laboris enim proident commodo amet. Duis veniam anim aliqua veniam incididunt amet sunt eu elit duis irure. Nulla dolore reprehenderit pariatur aliqua culpa anim occaecat esse culpa occaecat laborum officia minim. Tempor est esse tempor id labore aliquip irure Lorem sint deserunt ex ex id amet.
   items:
     - description: Auto-expanding abbreviations for zsh
       imageFilename: zsh-abbr.jpg
@@ -60,33 +89,5 @@ openSource:
       imageFilename: zsh-window-title.jpg
       link: https://github.com/olets/zsh-window-title.jpg
       title: zsh-window-title
-
-articles:
-  heading: articles
-  posts:
-    -
-      date: January 30, 2020
-      description: on viget.com
-      imageFilename: post-fish-shell.jpg
-      link: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
-      title: Try Out Fish For Your Command Line Shell
-    -
-      date: March 26, 2020
-      description: on viget.com
-      imageFilename: post-mamp-mysql-cli.jpg
-      link: https://www.viget.com/articles/cli-equivalents-for-common-mamp-pro-and-sequel-pro-tasks/
-      title: CLI Equivalents for Common MAMP PRO and Sequel Pro Tasks
-    -
-      date: January 26, 2022
-      description: on viget.com
-      imageFilename: post-github-actions.jpg
-      link: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
-      title: Automating build/deploy CI/CD with GitHub Actions
-    -
-      date: February 27, 2020
-      description: on viget.com
-      imageFilename: post-gitrevisions.jpg
-      link: https://www.viget.com/articles/committed-to-the-wrong-branch-upstream-and-to-the-rescue/
-      title: Committed to the wrong branch? -, @{upstream}, and @{-1} to the rescue
   summary:
-    Amet do laboris aliqua do laborum adipisicing elit ipsum occaecat id. Amet commodo excepteur enim et minim. Dolor consectetur qui eiusmod occaecat aliquip magna velit ea eu consectetur esse consectetur adipisicing aute. Eu irure voluptate in ut consequat sit ad aliqua Lorem occaecat sunt.
+    Ullamco quis ipsum minim sint id commodo irure labore sit minim elit. Consectetur in irure elit veniam do. Laboris enim proident commodo amet. Duis veniam anim aliqua veniam incididunt amet sunt eu elit duis irure. Nulla dolore reprehenderit pariatur aliqua culpa anim occaecat esse culpa occaecat laborum officia minim. Tempor est esse tempor id labore aliquip irure Lorem sint deserunt ex ex id amet.
