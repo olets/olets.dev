@@ -4,7 +4,7 @@
 <section>
   <div class="flex flex-col gap-8 lg:gap-12 justify-between md:flex-row">
     <div class="flex flex-col gap-4 items-end md:items-start md:order-last">
-      <a class="relative group flex-shrink-0 block" href="{{ data.bio.avatar.link }}">
+      <div class="block relative">
         {{ Image({
           classes: "md:w-32 rounded-full w-16",
           filename: data.bio.avatar.filename,
@@ -24,7 +24,7 @@
             w: 160,
           },
         }) }}
-      </a>
+      </div>
 
       <div class="flex gap-4 items-center md:flex-col md:order-last">
         <div>
@@ -49,14 +49,14 @@
         </div>
         
         <a
-          class="block md:underline no-underline"
+          class="block group md:underline no-underline"
           href="maillto:olets@olets.dev"
         >
           <span class="sr-only">email</span>
 
           <span class="hidden md:block">olets@olets.dev</span>
 
-          <span class="md:hidden text-5xl">✉️</span>
+          <span class="decoration-transparent group-focus:decoration-link group-hover:decoration-link md:hidden text-5xl transition-colors underline">✉️</span>
         </a>
       </div>
     </div>
