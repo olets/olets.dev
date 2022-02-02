@@ -2,11 +2,11 @@
 {% from "_Text.html.twig" import Text %}
 
 <section>
-  <div class="flex flex-col gap-8 justify-between md:flex-row">
-    <div class="flex gap-4 items-center justify-between md:flex-col md:order-last">
+  <div class="flex flex-col gap-8 lg:gap-12 justify-between md:flex-row">
+    <div class="flex flex-col gap-4 items-end md:items-start md:order-last">
       <a class="relative group flex-shrink-0 block" href="{{ data.bio.avatar.link }}">
         {{ Image({
-          classes: "md:w-32 rounded-full w-12",
+          classes: "md:w-32 rounded-full w-16",
           filename: data.bio.avatar.filename,
           imgixConfig: {
             ar: "1:1",
@@ -30,7 +30,7 @@
         <div>
           <h2 class="sr-only">Social links</h2>
 
-          <ul class="flex gap-4 items-center justify-center list-none md:flex-col">
+          <ul class="flex md:grid gap-4 items-center justify-center list-none md:grid-cols-2">
             {% for link in data.bio.socialLinks %}
               <li>
                 <a href={{ link.href }}>
@@ -61,10 +61,10 @@
       </div>
     </div>
 
-    <div class="flex-grow">
-      <h1 class="heading-1">Henry <span class='whitespace-nowrap'>Bley-Vroman</span></h1>
+    <div>
+      <h1 class="heading-1">Henry <span class="whitespace-nowrap">Bley-Vroman</span></h1>
 
-      <div class="mt-8">
+      <div class="mt-4 lg:mt-8">
         {{ Text({
           content: data.bio.summary|raw,
         }) }}
