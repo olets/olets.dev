@@ -3,8 +3,9 @@
 {% from "_Section.html.twig" import Section %}
 
 {% block content %}
-  {{ Section({
-    heading: openSource.heading,
-    cards: openSource.items,
-  }) }}
+  <div class="space-y-20">
+    {% for section in context.sections %}
+      {{ Section(section) }}
+    {% endfor %}
+  </div>
 {% endblock %}

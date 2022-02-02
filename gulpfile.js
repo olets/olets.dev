@@ -60,7 +60,9 @@ function views() {
 
   return src(config.viewsSrcGlobs)
     .pipe(twig({
-      data: data,
+      data: {
+        context: data,
+      },
       extname: '',
     }))
     .pipe(htmlmin({

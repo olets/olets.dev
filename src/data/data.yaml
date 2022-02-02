@@ -1,27 +1,40 @@
-openSource:
-  heading: "open source"
-  items:
-    - description: Auto-expanding abbreviations for zsh
-      imageFileName: zsh-abbr.jpg
-      link: https://github.com/olets/zsh-abbr
-      title: zsh-abbr
-      
-    - description: ''
-      imageFileName: git-replay.jpg
-      link: https://github.com/olets/git-replay
-      title: git-replay
-      
-    - description: ''
-      imageFileName: hometown.jpg
-      link: https://github.com/olets/hometown-prompt
-      title: Hometown Prompt
-      
-    - description: ''
-      imageFileName: git-prompt-kit.jpg
-      link: https://github.com/olets/git-prompt-kit
-      title: Git Prompt Kit
-      
-    - description: ''
-      imageFileName: zsh-test-runner.jpg
-      link: https://github.com/olets/zsh-test-runner
-      title: zsh-test-runner
+sections:
+  -
+    heading: Henry Bley-Vroman
+    headingLevel: 1
+  -
+    heading: "open source"
+    summary:
+      Ullamco quis ipsum minim sint id commodo irure labore sit minim elit. Consectetur in irure elit veniam do. Laboris enim proident commodo amet. Duis veniam anim aliqua veniam incididunt amet sunt eu elit duis irure. Nulla dolore reprehenderit pariatur aliqua culpa anim occaecat esse culpa occaecat laborum officia minim. Tempor est esse tempor id labore aliquip irure Lorem sint deserunt ex ex id amet.
+
+      asdfUllamco quis ipsum minim sint id commodo irure labore sit minim elit. Consectetur in irure elit veniam do. Laboris enim proident commodo amet. Duis veniam anim aliqua veniam incididunt amet sunt eu elit duis irure. Nulla dolore reprehenderit pariatur aliqua culpa anim occaecat esse culpa occaecat laborum officia minim. Tempor est esse tempor id labore aliquip irure Lorem sint deserunt ex ex id amet.
+    items:
+      - description: Auto-expanding abbreviations for zsh
+        imageFileName: zsh-abbr.jpg
+        link: https://github.com/olets/zsh-abbr
+        title: zsh-abbr
+        
+      - description: Automate the rebasing of Git branches and creation of stage branches
+        imageFileName: git-replay.jpg
+        link: https://github.com/olets/git-replay
+        title: git-replay
+        
+      - description: Feature rich, high performance Git-aware zsh theme
+        imageFileName: hometown.jpg
+        link: https://github.com/olets/hometown-prompt
+        title: Hometown Prompt
+        
+      - description: Configurable set of components for creating feature rich, high performance Git-aware zsh themes with minimal coding
+        imageFileName: git-prompt-kit.jpg
+        link: https://github.com/olets/git-prompt-kit
+        title: Git Prompt Kit
+        
+      - description: Straight-forward tests and coverage reports for zsh and —under zsh's emulation— csh, ksh, and sh
+        imageFileName: zsh-test-runner.jpg
+        link: https://github.com/olets/zsh-test-runner
+        title: zsh-test-runner
+        
+      - description: A zsh plugin for informative terminal window titles
+        imageFileName: zsh-window-title.jpg
+        link: https://github.com/olets/zsh-window-title.jpg
+        title: zsh-window-title
