@@ -3,25 +3,19 @@
 {% from "_Text.html.twig" import Text %}
 
 <section>
-  <div class="flex justify-between">
-    {{ Heading({
-      content: data.openSource.heading,
-      tag: 'h2',
-    }) }}
+  {{ Heading({
+    content: data.articles.heading,
+    tag: "h2",
+  }) }}
 
-    <div>{{ data.openSource.details|raw }}</div>
-  </div>
-
-  {% if data.openSource.summary|length %}
+  {% if data.articles.summary|length %}
     <div class="mt-8">
-      {{ Text({
-        content: data.openSource.summary,
-      }) }}
+      {{ Text({ content: data.articles.summary }) }}
     </div>
   {% endif %}
   
   <div class="gap-6 grid grid-cols-12 mt-8">
-    {% for card in data.openSource.items %}
+    {% for card in data.articles.posts %}
       <div class="col-span-full lg:col-span-4 sm:col-span-6 xl:col-span-3">
         {{ Card(card) }}
       </div>

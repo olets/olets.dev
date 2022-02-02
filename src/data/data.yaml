@@ -22,9 +22,10 @@ bio:
     At <a href="http://viget.com">Viget</a> he is an established Senior UI Developer, and is co-chair of the company DEI Advisory Committee. Previously: developer at <a href="http://newmediacampaigns.com">NMC</a>, neurobiopsychopharacology doctoral student at <a href="https://www.bu.edu/psych/academics/phd/bbc/">Boston University</a>.
 
     Find him online as olets (<a href="http://ipa-reader.xyz/?text=o%CA%8A%20l%C9%9Bts">/oʊ lɛts/</a>).
-    
+
 footer:
   sourceLink: https://github.com/olets/olets.dev
+
 openSource:
   heading: "software"
   summary:
@@ -59,3 +60,33 @@ openSource:
       imageFilename: zsh-window-title.jpg
       link: https://github.com/olets/zsh-window-title.jpg
       title: zsh-window-title
+
+articles:
+  heading: articles
+  posts:
+    -
+      date: January 30, 2020
+      description: on viget.com
+      imageFilename: post-fish-shell.jpg
+      link: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
+      title: Try Out Fish For Your Command Line Shell
+    -
+      date: March 26, 2020
+      description: on viget.com
+      imageFilename: post-mamp-mysql-cli.jpg
+      link: https://www.viget.com/articles/cli-equivalents-for-common-mamp-pro-and-sequel-pro-tasks/
+      title: CLI Equivalents for Common MAMP PRO and Sequel Pro Tasks
+    -
+      date: January 26, 2022
+      description: on viget.com
+      imageFilename: post-github-actions.jpg
+      link: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
+      title: Automating build/deploy CI/CD with GitHub Actions
+    -
+      date: February 27, 2020
+      description: on viget.com
+      imageFilename: post-gitrevisions.jpg
+      link: https://www.viget.com/articles/committed-to-the-wrong-branch-upstream-and-to-the-rescue/
+      title: Committed to the wrong branch? -, @{upstream}, and @{-1} to the rescue
+  summary:
+    Amet do laboris aliqua do laborum adipisicing elit ipsum occaecat id. Amet commodo excepteur enim et minim. Dolor consectetur qui eiusmod occaecat aliquip magna velit ea eu consectetur esse consectetur adipisicing aute. Eu irure voluptate in ut consequat sit ad aliqua Lorem occaecat sunt.

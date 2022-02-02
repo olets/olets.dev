@@ -35,24 +35,22 @@
         },
       }) }}
 
-      {% if props.description %}
-        <div class="
-          bg-white mt-3 rounded-t-md rounded-b-2xl transition underline
-          peer-focus:text-link
-          peer-hover:text-link
-        ">
-          {% if props.title|length %}
-            <em
-              aria-hidden="true"
-              class="block font-semibold"
-            >
-              <span>{{ props.title }}</span>
-            </em>
-          {% endif %}
+      <div class="
+        bg-white mt-3 rounded-t-md rounded-b-2xl transition underline
+        peer-focus:text-link
+        peer-hover:text-link
+      ">
+        {% if props.title|length %}
+          <em
+            aria-hidden="true"
+            class="block font-semibold"
+          >
+            <span>{{ props.title }}</span>
+          </em>
+        {% endif %}
 
-          {{ props.description|length ? props.description }}
-        </div>
-      {% endif %}
+        {{ props.description|length ? props.description }}
+      </div>
     </article>
   {% endif %}
 {% endmacro %}
