@@ -3,10 +3,10 @@ version: 1.0.0
 description: Source for olets.dev
 main: index.js
 scripts:
-  build: eleventy,
-  watch: eleventy --watch,
-  serve: eleventy --serve,
-  start: eleventy --serve,
+  build: eleventy
+  watch: eleventy --watch
+  serve: eleventy --serve
+  start: eleventy --serve
   debug: DEBUG=* eleventy
   # build: pnpm clean && pnpm gulp build && pnpm dev:fonts
   # build:fonts: >-
