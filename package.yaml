@@ -3,13 +3,18 @@ version: 1.0.0
 description: Source for olets.dev
 main: index.js
 scripts:
-  build: pnpm clean && pnpm gulp build && pnpm dev:fonts
-  build:fonts: >-
-    pnpm glyphhanger dist/*.html --subset=src/fonts/HeyAugust.woff2
-    --formats=woff2 --output=dist --cssSelector=.font-serif
-  clean: pnpm gulp clean
-  dev: pnpm clean && pnpm dev:fonts && pnpm gulp dev
-  dev:fonts: cp src/fonts/HeyAugust.woff2 dist/HeyAugust-subset.woff2
+  build: eleventy,
+  watch: eleventy --watch,
+  serve: eleventy --serve,
+  start: eleventy --serve,
+  debug: DEBUG=* eleventy
+  # build: pnpm clean && pnpm gulp build && pnpm dev:fonts
+  # build:fonts: >-
+  #   pnpm glyphhanger dist/*.html --subset=src/fonts/HeyAugust.woff2
+  #   --formats=woff2 --output=dist --cssSelector=.font-serif
+  # clean: pnpm gulp clean
+  # dev: pnpm clean && pnpm dev:fonts && pnpm gulp dev
+  # dev:fonts: cp src/fonts/HeyAugust.woff2 dist/HeyAugust-subset.woff2
 keywords: []
 author: Henry Bley-Vroman <olets@olets.dev>
 license: SEE LICENSE IN LICENSE
