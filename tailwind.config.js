@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: ['./src/data/data.yaml', './src/views/**/*.twig'],
+  content: ['**/*.njk'],
   theme: {
     extend: {
       aspectRatio: {

@@ -3,18 +3,17 @@ version: 1.0.0
 description: Source for olets.dev
 main: index.js
 scripts:
-  build: eleventy
+  build: pnpm build:eleventy && pnpm build:tailwind
+  build:eleventy: ELEVENTY_PRODUCTION=true eleventy
+  build:tailwind: NODE_ENV=production pnpm tailwind -i css/index.css -c tailwind.config.js -o _site/css/index.css --minify
   watch: eleventy --watch
-  serve: eleventy --serve
-  start: eleventy --serve
+  dev: pnpm dev:eleventy & pnpm dev:tailwind
   debug: DEBUG=* eleventy
+  dev:eleventy: eleventy --serve
+  dev:tailwind: pnpm tailwindcss -i css/index.css -c tailwind.config.js -o _site/css/index.css --watch
   # build: pnpm clean && pnpm gulp build && pnpm dev:fonts
-  # build:fonts: >-
-  #   pnpm glyphhanger dist/*.html --subset=src/fonts/HeyAugust.woff2
-  #   --formats=woff2 --output=dist --cssSelector=.font-serif
   # clean: pnpm gulp clean
   # dev: pnpm clean && pnpm dev:fonts && pnpm gulp dev
-  # dev:fonts: cp src/fonts/HeyAugust.woff2 dist/HeyAugust-subset.woff2
 keywords: []
 author: Henry Bley-Vroman <olets@olets.dev>
 license: SEE LICENSE IN LICENSE
