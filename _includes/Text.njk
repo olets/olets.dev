@@ -1,7 +1,8 @@
 {% macro Text(props = {}) %}
-  {% set props = {
-    content: null,
-  }|merge(props) -%}
+  {% set content = null %}
+  {% if props.content %}
+    {% set content = props.content %}
+  {% endif %}
   
-  <div class="max-w-4xl">{{ props.content }}</div>
+  <div class="max-w-4xl">{{ content }}</div>
 {% endmacro %}
