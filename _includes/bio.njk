@@ -7,7 +7,7 @@
       <div class="block relative">
         {# {{ Image({
           classes: "md:w-32 rounded-full w-16",
-          filename: data.bio.avatar.filename,
+          filename: bio.avatar.filename,
           imgixConfig: {
             ar: "1:1",
             fit: "crop",
@@ -15,15 +15,15 @@
           }
         }) }} #}
 
-        {{ Image({
+        {# {{ Image({
           classes: "absolute focus:opacity-100 hover:opacity-100 inset-0 opacity-0 rounded-full transition-opacity",
-          filename: data.bio.avatar.hoverFilename,
+          filename: bio.avatar.hoverFilename,
           imgixConfig: {
             ar: "1:1",
             fit: "crop",
             w: 160,
           },
-        }) }}
+        }) }} #}
       </div>
 
       <div class="flex gap-4 items-center md:flex-col md:order-last">
@@ -31,7 +31,7 @@
           <h2 class="sr-only">Social links</h2>
 
           <ul class="flex md:grid gap-4 items-center justify-center list-none md:grid-cols-2">
-            {% for link in data.bio.socialLinks %}
+            {% for link in bio.socialLinks %}
               <li>
                 <a href={{ link.href }}>
                   <span class="sr-only">{{ link.platform }}</span>
@@ -65,9 +65,9 @@
       <h1 class="heading-1">Henry <span class="whitespace-nowrap">Bley-Vroman</span></h1>
 
       <div class="mt-2 md:mt-4 lg:mt-8">
-        {{ Text({
-          content: data.bio.summary|raw,
-        }) }}
+        {# {{ Text({
+          content: bio.summary|raw,
+        }) }} #}
       </div>
     </div>
   </div>

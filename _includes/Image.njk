@@ -1,33 +1,39 @@
-{% macro ImgixUrl(props = {}) -%}
-  {% set props = {
-    file: null,
-    config: null,
-  }|merge(props) -%}
-
-  https://olets.imgix.net/{{ props.file }}?{{ props.config|url_encode|replace({ "%3A": ":" }) -}}
-{% endmacro %}
-
 {% macro Image(props = {}) %}
-  {% set props = {
-    alt: null,
-    classes: null,
-    filename: null,
-    imgixConfig: null,
-  }|merge(props) %}
+  {% set alt = null %}
+  {% if props.alt %}
+    {% set alt = props.alt %}
+  {% endif %}
 
-  {% set src = _self.ImgixUrl({
-    file: props.filename,
-    config: props.imgixConfig,
+  {% set classes = null %}
+  {% if props.classes %}
+    {% set classes = props.classes %}
+  {% endif %}
+
+  {% set filename = null %}
+  {% if props.filename %}
+    {% set filename = props.filename %}
+  {% endif %}
+
+  {% set imgixConfig = null %}
+  {% if props.imgixConfig %}
+    {% set imgixConfig = props.imgixConfig %}
+  {% endif %}
+
+  {% from "ImgixUrl.njk" import ImgixUrl %}
+  
+  {% set src = ImgixUrl({
+    file: filename,
+    config: imgixConfig
   }) %}
 
-  {% set fallbackSrc = _self.ImgixUrl({
+  {% set fallbackSrc = ImgixUrl({
     file: "beach.jpg",
-    config: props.imgixConfig,
+    config: imgixConfig
   }) %}
 
   <img
-    alt="{{ props.alt }}"
-    class="{{ props.classes }}"
+    alt="{{ alt }}"
+    class="{{ classes }}"
     src="{{ src }}"
     onerror="this.onerror=null; this.src='{{ fallbackSrc }}'"
   >

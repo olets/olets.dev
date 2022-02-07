@@ -1,23 +1,23 @@
 {% from "Card.njk" import Card %}
-{% from "Text.njk" import Text %}
+{# {% from "Text.njk" import Text %} #}
 
 <div>
   <div class="flex justify-between">
-    <h2 class="heading-2">{{ data.openSource.heading }}</h2>
+    <h2 class="heading-2">{{ openSource.heading }}</h2>
 
-    <div>{{ data.openSource.details|raw }}</div>
+    <div>{{ openSource.details }}</div>
   </div>
 
-  {% if data.openSource.summary|length %}
+  {% if openSource.summary|length %}
     <div class="mt-8">
-      {{ Text({
-        content: data.openSource.summary,
-      }) }}
+      {# {{ Text({
+        content: openSource.summary,
+      }) }} #}
     </div>
   {% endif %}
   
   <div class="gap-6 grid grid-cols-12 mt-8">
-    {% for card in data.openSource.items %}
+    {% for card in openSource.items %}
       <div class="col-span-full lg:col-span-4 sm:col-span-6 xl:col-span-3">
         {{ Card(card) }}
       </div>

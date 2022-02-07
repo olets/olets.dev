@@ -1,0 +1,42 @@
+{
+  "heading": "software",
+  "items": [
+      {
+          "description": "Auto-expanding abbreviations for zsh",
+          "imageFilename": "zsh-abbr.jpg",
+          "link": "https://github.com/olets/zsh-abbr",
+          "title": "zsh-abbr"
+      },
+      {
+          "description": "Automate the rebasing of Git branches and creation of stage branches",
+          "imageFilename": "git-replay.jpg",
+          "link": "https://github.com/olets/git-replay",
+          "title": "git-replay"
+      },
+      {
+          "description": "Feature rich, high performance Git-aware zsh theme",
+          "imageFilename": "hometown.jpg",
+          "link": "https://github.com/olets/hometown-prompt",
+          "title": "Hometown Prompt"
+      },
+      {
+          "description": "Configurable set of components for creating feature rich, high performance Git-aware zsh themes with minimal coding",
+          "imageFilename": "git-prompt-kit.jpg",
+          "link": "https://github.com/olets/git-prompt-kit",
+          "title": "Git Prompt Kit"
+      },
+      {
+          "description": "Straight-forward tests and coverage reports for zsh and —under zsh's emulation— csh, ksh, and sh",
+          "imageFilename": "zsh-test-runner.jpg",
+          "link": "https://github.com/olets/zsh-test-runner",
+          "title": "zsh-test-runner"
+      },
+      {
+          "description": "A zsh plugin for informative terminal window titles",
+          "imageFilename": "zsh-window-title.jpg",
+          "link": "https://github.com/olets/zsh-window-title.jpg",
+          "title": "zsh-window-title"
+      }
+  ],
+  "summary": null
+}
