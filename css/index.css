@@ -16,10 +16,8 @@
     @apply font-bold not-italic;
   }
 
-  svg {
-    path {
-      fill: currentColor;
-    }
+  svg path {
+    fill: currentColor;
   }
 }
 

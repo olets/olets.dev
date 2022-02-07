@@ -5,25 +5,25 @@
   <div class="flex flex-col gap-8 lg:gap-12 justify-between md:flex-row">
     <div class="flex flex-col gap-4 items-end md:items-start md:order-last">
       <div class="block relative">
-        {# {{ Image({
+        {{ Image({
           classes: "md:w-32 rounded-full w-16",
           filename: bio.avatar.filename,
           imgixConfig: {
             ar: "1:1",
             fit: "crop",
-            w: 160,
+            w: 160
           }
-        }) }} #}
+        }) }}
 
-        {# {{ Image({
+        {{ Image({
           classes: "absolute focus:opacity-100 hover:opacity-100 inset-0 opacity-0 rounded-full transition-opacity",
           filename: bio.avatar.hoverFilename,
           imgixConfig: {
             ar: "1:1",
             fit: "crop",
-            w: 160,
-          },
-        }) }} #}
+            w: 160
+          }
+        }) }}
       </div>
 
       <div class="flex gap-4 items-center md:flex-col md:order-last">
@@ -65,9 +65,9 @@
       <h1 class="heading-1">Henry <span class="whitespace-nowrap">Bley-Vroman</span></h1>
 
       <div class="mt-2 md:mt-4 lg:mt-8">
-        {# {{ Text({
-          content: bio.summary|raw,
-        }) }} #}
+        {{ Text({
+          content: bio.summary|safe
+        }) }}
       </div>
     </div>
   </div>
