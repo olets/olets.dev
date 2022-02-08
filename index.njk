@@ -10,8 +10,8 @@ eleventyNavigation:
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
-
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p> #}
+#}
+<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p> 
 
 <div class="space-y-12 md:space-y-16 lg:space-y-20 w-full">
   <header class="space-y-12 md:space-y-16 lg:space-y-20">

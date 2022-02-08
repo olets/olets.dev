@@ -10,6 +10,10 @@ templateClass: tmpl-post
 <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
 {%- endfor %}
 
+{% if original.source and original.url %}
+  <p>A version of this post originally appeared on <a href="{{ original.url | url }}">{{ original.source }}</a></p>
+{% endif %}
+
 {{ content | safe }}
 
 {%- if collections.posts %}
