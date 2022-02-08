@@ -2,19 +2,22 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-{%- for tag in tags | filterTagList -%}
-{%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-{%- endfor %}
+<div class="prose">
+  <h1>{{ title }}</h1>
 
-{% if original.source and original.url %}
-  <p>A version of this post originally appeared on <a href="{{ original.url | url }}">{{ original.source }}</a></p>
-{% endif %}
+  <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+  {%- for tag in tags | filterTagList -%}
+  {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+  <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+  {%- endfor %}
 
-{{ content | safe }}
+  {% if original.source and original.url %}
+    <p>A version of this post originally appeared on <a href="{{ original.url | url }}">{{ original.source }}</a></p>
+  {% endif %}
+
+  {{ content | safe }}
+</div>
 
 {%- if collections.posts %}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) %}

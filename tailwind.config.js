@@ -1,5 +1,6 @@
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
+const typography = require('@tailwindcss/typography');
 
 module.exports = {
   content: ['**/*.njk'],
@@ -29,4 +30,5 @@ module.exports = {
       }),
     },
   },
+  plugins: [ typography ],
 }

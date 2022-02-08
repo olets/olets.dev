@@ -5,16 +5,19 @@ main: index.js
 scripts:
   build: pnpm build:eleventy && pnpm build:tailwind && pnpm build:fonts
   build:eleventy: ELEVENTY_PRODUCTION=true eleventy
-  build:tailwind: NODE_ENV=production pnpm tailwind -i css/index.css -c tailwind.config.js -o _site/css/index.css --minify
+  build:tailwind: >-
+    NODE_ENV=production pnpm tailwind -i css/index.css -c tailwind.config.js -o
+    _site/css/index.css --minify
   watch: eleventy --watch
   dev: pnpm dev:eleventy & pnpm dev:tailwind
   debug: DEBUG=* eleventy
   dev:eleventy: eleventy --serve
-  dev:tailwind: pnpm tailwindcss -i css/index.css -c tailwind.config.js -o _site/css/index.css --watch
-  # build: pnpm clean && pnpm gulp build && pnpm dev:fonts
-  build:fonts: pnpm glyphhanger _site/*.html --subset=_site/fonts/HeyAugust.woff2 --formats=woff2 --output=_site/fonts
-  # clean: pnpm gulp clean
-  # dev: pnpm clean && pnpm dev:fonts && pnpm gulp dev
+  dev:tailwind: >-
+    pnpm tailwindcss -i css/index.css -c tailwind.config.js -o
+    _site/css/index.css --watch
+  build:fonts: >-
+    pnpm glyphhanger _site/*.html --subset=_site/fonts/HeyAugust.woff2
+    --formats=woff2 --output=_site/fonts
 keywords: []
 author: Henry Bley-Vroman <olets@olets.dev>
 license: SEE LICENSE IN LICENSE
@@ -23,6 +26,7 @@ devDependencies:
   '@11ty/eleventy-navigation': ^0.3.2
   '@11ty/eleventy-plugin-rss': ^1.1.2
   '@11ty/eleventy-plugin-syntaxhighlight': ^4.0.0
+  '@tailwindcss/typography': ^0.5.1
   '@types/markdown-it': ^12.2.3
   autoprefixer: ^10.4.2
   browser-sync: ^2.27.7
