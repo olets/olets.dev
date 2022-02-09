@@ -3,10 +3,21 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 
+{% from "PostNav.njk" import PostNav %}
 {% from "Prose.njk" import Prose %}
 
-<article class="flex justify-center w-full">
-  <div class="flex-grow max-w-4xl space-y-14 w-full">
+{% set nextPost = null %}
+{% set previousPost = null %}
+
+{% if collections.posts %}
+  {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+  {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+{% endif %}
+
+<div class="container flex gap-10 justify-between mx-auto w-full">
+  <div class="hidden xl:block w-48 flex-shrink-0">&nbsp;</div>
+
+  <article class="flex-grow max-w-4xl space-y-14 w-full">
     <div class="space-y-8">
       <h1 class="heading-2">{{ title }}</h1>
 
@@ -35,43 +46,28 @@ templateClass: tmpl-post
 
     {% set proseContent %}
       {{ content | safe }}
-
-      {% if collections.posts %}
-        {% set nextPost = collections.posts | getNextCollectionItem(page) %}
-        {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-
-        {% if nextPost or previousPost %}
-          <ul class="border-t list-none mt-20 p-0 pt-10 space-y-12 w-full">
-            {% if nextPost %}
-              <li>
-                <p>
-                  <div class="font-bold text-xl">Next Post:</div>
-
-                  <a class="mt-2" href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
-                </p>
-              </li>
-            {% endif %}
-
-            {% if previousPost %}
-              <li>
-                <p>
-                  <div class="font-bold text-xl">Previous Post:</div>
-
-                  <a class="mt-2" href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
-                </p>
-              </li>
-            {% endif %}
-
-            <li>
-              <p>
-                <a class="font-bold text-xl" href="{{ '/posts/' | url }}">See All Posts</a>
-              </p>
-            </li>
-          </ul>
-        {% endif %}
-      {% endif %}
     {% endset %}
 
     <div>{{ Prose({ content: proseContent }) }}</div>
+
+    {{ PostNav({
+      nextPost: nextPost,
+      previousPost: previousPost
+    })}}
+  </article>
+
+  <div class="w-48 flex-shrink-0">
+    <nav class="sticky top-10 text-right">
+      {% include "SocialLinks.njk" %}
+      
+      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+      <ul class="mt-10">
+        {%- for entry in collections.all | eleventyNavigation %}
+          <li class="{% if entry.url == page.url %}text-link{% endif %}">
+            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+          </li>
+        {%- endfor %}
+      </ul>
+    </nav>
   </div>
-</article>
+</div>

@@ -8,8 +8,8 @@ eleventyNavigation:
 {% from "Card.njk" import Card %}
 {% from "Text.njk" import Text %}
 
-<div class="space-y-12 md:space-y-16 lg:space-y-20 w-full">
-  <header class="space-y-12 md:space-y-16 lg:space-y-20">
+{% block header %}
+  <header class="container mx-auto space-y-12 md:space-y-16 lg:space-y-20">
     {% include "bio.njk" %}
     
     <nav class="md:sr-only">
@@ -21,23 +21,23 @@ eleventyNavigation:
       </ul>
     </nav>
   </header>
+{% endblock %}
 
-  <main class="space-y-12 md:space-y-16 lg:space-y-20">
-    <section id="latest-articles">
-      {% set maxPosts = collections.posts.length | min(3) %}
-      {% set postslist = collections.posts | head(-4) %}
-      {% set postslistCounter = collections.posts | length %}
+<main class="container mx-auto mt-12 md:mt-16 lg:mt-20 space-y-12 md:space-y-16 lg:space-y-20">
+  <section id="latest-articles">
+    {% set maxPosts = collections.posts.length | min(3) %}
+    {% set postslist = collections.posts | head(-4) %}
+    {% set postslistCounter = collections.posts | length %}
 
-      <h2 class="heading-2">Latest {% if maxPosts > 1 %}Articles{% else %}Article{% endif %}</h2>
+    <h2 class="heading-2">Latest {% if maxPosts > 1 %}Articles{% else %}Article{% endif %}</h2>
 
-      <div class="mt-8">
-        {{ Text({ content: "More posts can be found in <a href=\"{{ '/posts/' | url }}\">the archive</a>."|safe }) }}
-      </div>
-      {% include "postslist.njk" %}
-    </section>
+    <div class="mt-8">
+      {{ Text({ content: "More posts can be found in <a href=\"{{ '/posts/' | url }}\">the archive</a>."|safe }) }}
+    </div>
+    {% include "postslist.njk" %}
+  </section>
 
-    <section id="software">
-      {% include "open-source.njk" %}
-    </section>
-  </main>
-</div>
+  <section id="software">
+    {% include "open-source.njk" %}
+  </section>
+</main>

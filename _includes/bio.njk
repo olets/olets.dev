@@ -1,74 +1,17 @@
-{% from "Image.njk" import Image %}
 {% from "Text.njk" import Text %}
 
-<section>
-  <div class="flex flex-col gap-8 lg:gap-12 justify-between md:flex-row">
-    <div class="flex flex-col gap-4 items-end md:items-start md:order-last">
-      <div class="block relative">
-        {{ Image({
-          classes: "md:w-32 rounded-full w-16",
-          filename: bio.avatar.filename,
-          imgixConfig: {
-            ar: "1:1",
-            fit: "crop",
-            w: 160
-          }
-        }) }}
+<div class="flex flex-col gap-8 lg:gap-12 justify-between md:flex-row">
+  <div class="md:order-last">
+    {% include "SocialLinks.njk" %}
+  </div>
 
-        {{ Image({
-          classes: "absolute focus:opacity-100 hover:opacity-100 inset-0 opacity-0 rounded-full transition-opacity",
-          filename: bio.avatar.hoverFilename,
-          imgixConfig: {
-            ar: "1:1",
-            fit: "crop",
-            w: 160
-          }
-        }) }}
-      </div>
+  <div>
+    <h1 class="heading-1">Henry <span class="whitespace-nowrap">Bley-Vroman</span></h1>
 
-      <div class="flex gap-4 items-center md:flex-col md:order-last">
-        <div>
-          <h2 class="sr-only">Social links</h2>
-
-          <ul class="flex md:grid gap-4 items-center justify-center list-none md:grid-cols-2">
-            {% for link in bio.socialLinks %}
-              <li>
-                <a href={{ link.href }}>
-                  <span class="sr-only">{{ link.platform }}</span>
-                  
-                  <span
-                    class="block focus:text-link hover:text-link transition-colors w-12"
-                    aria-hidden="true"
-                  >
-                    {% include link.platform ~ ".njk" %}
-                  </span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-        
-        <a
-          class="block group md:underline no-underline"
-          href="maillto:olets@olets.dev"
-        >
-          <span class="sr-only">email</span>
-
-          <span class="hidden md:block">olets@olets.dev</span>
-
-          <span class="decoration-transparent group-focus:decoration-link group-hover:decoration-link md:hidden text-5xl transition-colors underline">✉️</span>
-        </a>
-      </div>
-    </div>
-
-    <div>
-      <h1 class="heading-1">Henry <span class="whitespace-nowrap">Bley-Vroman</span></h1>
-
-      <div class="mt-2 md:mt-4 lg:mt-8">
-        {{ Text({
-          content: bio.summary|safe
-        }) }}
-      </div>
+    <div class="mt-2 md:mt-4 lg:mt-8">
+      {{ Text({
+        content: bio.summary|safe
+      }) }}
     </div>
   </div>
-</section>
+</div>
