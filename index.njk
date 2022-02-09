@@ -8,32 +8,45 @@ eleventyNavigation:
 {% from "Card.njk" import Card %}
 {% from "Text.njk" import Text %}
 
-{% block header %}
-  <header class="container mx-auto space-y-12 md:space-y-16 lg:space-y-20">
-    {% include "bio.njk" %}
-    
-    <nav class="md:sr-only">
-      <div class="sr-only">Navigation</div>
+<header class="container mx-auto space-y-12 md:space-y-16 lg:space-y-20">
+  <div class="flex flex-col gap-8 lg:gap-12 justify-between md:flex-row">
+    <div class="md:order-last">
+      {% include "nav.njk" %}
+    </div>
 
-      <ul class="flex gap-4">
-        <li><a href="#latest-articles">Latest Artices</a></li>
-        <li><a href="#software">Software</a></li>
-      </ul>
-    </nav>
-  </header>
-{% endblock %}
+    <div>
+      <h1 class="heading-1">Henry <span class="whitespace-nowrap">Bley-Vroman</span></h1>
+
+      <div class="mt-2 md:mt-4 lg:mt-8">
+        {{ Text({
+          content: bio.summary|safe
+        }) }}
+      </div>
+    </div>
+  </div>
+  
+  <div class="md:hidden space-y-2">
+    <div class="font-bold">On this page:</div>
+
+    <ul class="flex gap-4">
+      <li><a href="#latest">Latest {% if maxPosts > 1 %}Posts{% else %}Post{% endif %}</a></li>
+      <li><a href="#software">Software</a></li>
+    </ul>
+  </div>
+</header>
 
 <main class="container mx-auto mt-12 md:mt-16 lg:mt-20 space-y-12 md:space-y-16 lg:space-y-20">
-  <section id="latest-articles">
+  <section id="latest">
     {% set maxPosts = collections.posts.length | min(3) %}
     {% set postslist = collections.posts | head(-4) %}
     {% set postslistCounter = collections.posts | length %}
 
-    <h2 class="heading-2">Latest {% if maxPosts > 1 %}Articles{% else %}Article{% endif %}</h2>
+    <h2 class="heading-2">Latest {% if maxPosts > 1 %}Posts{% else %}Post{% endif %}</h2>
 
-    <div class="mt-8">
-      {{ Text({ content: "More posts can be found in <a href=\"{{ '/posts/' | url }}\">the archive</a>."|safe }) }}
+    <div class="mt-8 text-3xl">
+      {{ Text({ content: "👉 See <a href=\"{{ '/posts/' | url }}\">all posts</a>. 👈"|safe }) }}
     </div>
+
     {% include "postslist.njk" %}
   </section>
 

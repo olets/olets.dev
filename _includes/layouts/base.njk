@@ -50,10 +50,6 @@
   </head>
 
   <body class="flex flex-col md:text-lg min-h-screen p-10">
-    <header>
-      {% block header %}{% endblock %}
-    </header>
-
     <div class="flex-grow">
       {{ content | safe }}
     </div>
@@ -62,6 +58,11 @@
       © Copyright Henry Bley-Vroman, 2022-present.
 
       <p>
+        Core stack:
+        <a href="{{ "https://github.com/11ty/eleventy"|url }}">Eleventy</a>,
+        <a href="{{ "https://netlify.com/"|url }}">Netlify</a>,
+        <a href="{{ "https://tailwindcss.com"|url }}">Tailwind CSS</a>.
+        
         You can <a href="{{ footer.sourceLink }}">look at the source</a>.
       </p>
     </footer>

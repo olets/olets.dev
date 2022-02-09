@@ -14,8 +14,14 @@ templateClass: tmpl-post
   {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {% endif %}
 
-<div class="container flex gap-10 justify-between mx-auto w-full">
+<div class="container flex flex-col md:flex-row gap-10 justify-between mx-auto w-full">
   <div class="hidden xl:block w-48 flex-shrink-0">&nbsp;</div>
+
+  <div class="md:order-last md:w-48 flex-shrink-0">
+    <nav class="sticky top-10">
+      {% include "nav.njk" %}
+    </nav>
+  </div>
 
   <article class="flex-grow max-w-4xl space-y-14 w-full">
     <div class="space-y-8">
@@ -55,19 +61,4 @@ templateClass: tmpl-post
       previousPost: previousPost
     })}}
   </article>
-
-  <div class="w-48 flex-shrink-0">
-    <nav class="sticky top-10 text-right">
-      {% include "SocialLinks.njk" %}
-      
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="mt-10">
-        {%- for entry in collections.all | eleventyNavigation %}
-          <li class="{% if entry.url == page.url %}text-link{% endif %}">
-            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-          </li>
-        {%- endfor %}
-      </ul>
-    </nav>
-  </div>
 </div>
