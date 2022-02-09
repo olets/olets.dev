@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/sidebar.njk
 templateClass: tmpl-post
 ---
 
@@ -14,51 +14,41 @@ templateClass: tmpl-post
   {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {% endif %}
 
-<div class="container flex flex-col md:flex-row gap-10 justify-between mx-auto w-full">
-  <div class="hidden xl:block w-48 flex-shrink-0">&nbsp;</div>
+<article class="max-w-4xl space-y-14 w-full">
+  <div class="space-y-8">
+    <h1 class="heading-2">{{ title }}</h1>
 
-  <div class="md:order-last md:w-48 flex-shrink-0">
-    <nav class="sticky top-10">
-      {% include "nav.njk" %}
-    </nav>
+    <div class="opacity-80">Posted <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></div>
+
+    {% if tags %}
+      <div>
+        <span class="font-bold">Tags:</span>
+
+        <ul class="flex-wrap gap-2 inline-flex list-none pl-0">
+          {% for tag in tags | sort | filterTagList %}
+            <li>
+              {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+
+              <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if original.source and original.url %}
+      <p class="italic">A version of this post originally appeared on <a href="{{ original.url | url }}">{{ original.source }}</a></p>
+    {% endif %}
   </div>
 
-  <article class="flex-grow max-w-4xl space-y-14 w-full">
-    <div class="space-y-8">
-      <h1 class="heading-2">{{ title }}</h1>
+  {% set proseContent %}
+    {{ content | safe }}
+  {% endset %}
 
-      <div class="opacity-80">Posted <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></div>
+  <div>{{ Prose({ content: proseContent }) }}</div>
 
-      {% if tags %}
-        <div>
-          <span class="font-bold">Tags:</span>
-
-          <ul class="flex-wrap gap-2 inline-flex list-none pl-0">
-            {% for tag in tags | sort | filterTagList %}
-              <li>
-                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-
-                <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-
-      {% if original.source and original.url %}
-        <p class="italic">A version of this post originally appeared on <a href="{{ original.url | url }}">{{ original.source }}</a></p>
-      {% endif %}
-    </div>
-
-    {% set proseContent %}
-      {{ content | safe }}
-    {% endset %}
-
-    <div>{{ Prose({ content: proseContent }) }}</div>
-
-    {{ PostNav({
-      nextPost: nextPost,
-      previousPost: previousPost
-    })}}
-  </article>
-</div>
+  {{ PostNav({
+    nextPost: nextPost,
+    previousPost: previousPost
+  })}}
+</article>
