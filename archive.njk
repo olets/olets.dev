@@ -6,14 +6,20 @@ eleventyNavigation:
   order: 2
 ---
 
+{% from "Prose.njk" import Prose %}
 {% from "PostsList.njk" import PostsList %}
 
-
-<h1>Posts</h1>
-
-{% set postslist = collections.posts %}
+<div class="max-w-4xl space-y-14 w-full">
+  <div class="space-y-10">
+    <h1 class="heading-1">Posts</h1>
 
     {{ PostsList({
-      classes: "grid-cols-12",
-      posts: postslist|reverse
+      classes: "lg:col-span-4 sm:col-span-6",
+      posts: collections.posts|reverse
     })}}
+  </div>
+
+  <div>{{ Prose({ content: proseContent }) }}</div>
+
+  <p>See <a href="{{ '/tags/' | url }}">all tags</a>.</p>
+</div>
