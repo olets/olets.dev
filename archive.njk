@@ -1,12 +1,19 @@
 ---
-layout: layouts/full.njk
+layout: layouts/sidebar.njk
 permalink: /posts/
 eleventyNavigation:
   key: Posts
   order: 2
 ---
 
+{% from "PostsList.njk" import PostsList %}
+
+
 <h1>Posts</h1>
 
 {% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+
+    {{ PostsList({
+      classes: "grid-cols-12",
+      posts: postslist|reverse
+    })}}

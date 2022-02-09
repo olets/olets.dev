@@ -14,7 +14,7 @@ templateClass: tmpl-post
   {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {% endif %}
 
-<article class="max-w-4xl space-y-14 w-full">
+<div class="max-w-4xl space-y-14 w-full">
   <div class="space-y-8">
     <h1 class="heading-2">{{ title }}</h1>
 
@@ -51,4 +51,4 @@ templateClass: tmpl-post
     nextPost: nextPost,
     previousPost: previousPost
   })}}
-</article>
+</div>

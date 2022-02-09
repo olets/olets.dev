@@ -1,0 +1,52 @@
+{% macro PostsList(props = {}) %}
+  {% from "Card.njk" import Card %}
+  {% from "Text.njk" import Text %}
+
+  {% set classes = null %}
+  {% if props.classes %}
+    {% set classes = props.classes %}
+  {% endif %}
+
+  {% set counterStart = null %}
+  {% if props.counterStart %}
+    {% set counterStart = props.counterStart %}
+  {% endif %}
+
+  {% set posts = null %}
+  {% if props.posts %}
+    {% set posts = props.posts %}
+  {% endif %}
+
+  <div>
+    <ol reversed class="gap-6 grid grid-cols-12 mt-8" style="counter-reset: start-from {{ (counterStart or postslist.length) + 1 }}">
+      {% for post in posts %}
+        <li class="col-span-full {{ classes }}">
+          {% set description %}
+            {% if post.date %}
+              <time class="block my-2 text-sm uppercase" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            {% endif %}
+
+            <p>{{ post.data.description }}</p>
+          {% endset %}
+
+          {% set postscript %}
+            <div class="flex flex-wrap gap-2">
+              {% for tag in post.data.tags | filterTagList %}
+                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+                <a href="{{ tagUrl | url }}" class="post-tag">#{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endset %}
+
+          {{ Card({
+            description: description|safe,
+            imageFilename: post.data.imageFilename,
+            link: post.url,
+            postscript: postscript|safe,
+            title: post.data.title
+          }) }}
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+{% endmacro %}

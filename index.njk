@@ -6,6 +6,7 @@ eleventyNavigation:
 ---
 
 {% from "Card.njk" import Card %}
+{% from "PostsList.njk" import PostsList %}
 {% from "Text.njk" import Text %}
 
 <header class="container mx-auto space-y-12 md:space-y-16 lg:space-y-20">
@@ -47,7 +48,11 @@ eleventyNavigation:
       {{ Text({ content: "👉 See <a href=\"{{ '/posts/' | url }}\">all posts</a>. 👈"|safe }) }}
     </div>
 
-    {% include "postslist.njk" %}
+    {{ PostsList({
+      classes: "lg:col-span-4 sm:col-span-6 xl:col-span-3",
+      counterStart: postslistCounter,
+      posts: postslist|reverse
+    }) }}
   </section>
 
   <section id="software">
