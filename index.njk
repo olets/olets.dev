@@ -38,8 +38,8 @@ eleventyNavigation:
 
 <main class="container mx-auto mt-12 md:mt-16 lg:mt-20 space-y-12 md:space-y-16 lg:space-y-20">
   <section id="latest">
-    {% set maxPosts = collections.posts.length | min(3) %}
-    {% set postslist = collections.posts | head(-4) %}
+    {% set maxPosts = collections.posts.length | min(4) %}
+    {% set postslist = collections.posts | head(-maxPosts) %}
     {% set postslistCounter = collections.posts | length %}
 
     <h2 class="heading-2">Latest {% if maxPosts > 1 %}Posts{% else %}Post{% endif %}</h2>
