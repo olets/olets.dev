@@ -9,6 +9,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
+imageFilename: post-github-actions.jpg
 ---
 
 Projects hosted on GitHub can implement [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) (CI), [continuous deployment](https://en.wikipedia.org/wiki/Continuous_deployment) (CD), and [continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery) (the other CD) with **GitHub Actions** workflows. This works in **public and private repos**. (There are [tiered limits](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions) for storage and time.)

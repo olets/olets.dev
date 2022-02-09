@@ -10,6 +10,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/cli-equivalents-for-common-mamp-pro-and-sequel-pro-tasks/
+imageFilename: post-mamp-mysql-cli.jpg
 ---
 
 Working on website front ends I sometimes use MAMP PRO to manage local hosts and Sequel Pro to manage databases. Living primarily in my text editor, a terminal, and a browser window, moving to these click-heavy dedicated apps can feel clunky. Happily, the tasks I have most frequently turned to those apps for —starting and stopping servers, creating new hosts, and importing, exporting, deleting, and creating databases— can be done from the command line.

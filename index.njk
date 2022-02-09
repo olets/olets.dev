@@ -4,14 +4,9 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-{# {% set maxPosts = collections.posts.length | min(3) %}
-<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
-#}
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p> 
+{% from "Card.njk" import Card %}
+{% from "Text.njk" import Text %}
 
 <div class="space-y-12 md:space-y-16 lg:space-y-20 w-full">
   <header class="space-y-12 md:space-y-16 lg:space-y-20">
@@ -29,7 +24,16 @@ eleventyNavigation:
 
   <main class="space-y-12 md:space-y-16 lg:space-y-20">
     <section id="latest-articles">
-      {% include "articles.njk" %}
+      {% set maxPosts = collections.posts.length | min(3) %}
+      {% set postslist = collections.posts | head(-4) %}
+      {% set postslistCounter = collections.posts | length %}
+
+      <h2 class="heading-2">Latest {% if maxPosts > 1 %}Articles{% else %}Article{% endif %}</h2>
+
+      <div class="mt-8">
+        {{ Text({ content: "More posts can be found in <a href=\"{{ '/posts/' | url }}\">the archive</a>."|safe }) }}
+      </div>
+      {% include "postslist.njk" %}
     </section>
 
     <section id="software">

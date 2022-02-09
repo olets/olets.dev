@@ -34,6 +34,9 @@ module.exports = {
         DEFAULT: {
           css: {
             "--tw-prose-bullets": theme('colors.accent.400'),
+            th: {
+              textTransform: 'uppercase',
+            }
           },
         },
       }),

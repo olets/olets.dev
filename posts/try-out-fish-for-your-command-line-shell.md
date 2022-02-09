@@ -8,6 +8,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
+imageFilename: post-fish-shell.jpg
 ---
 
 In the article [Configure Zsh Options & Plugins for Productivity in macOS's Default Shell](https://www.viget.com/articles/zsh-config-productivity-plugins-for-mac-oss-default-shell/) I walked through customizing zsh's interactive shell to add what I consider key features. (An "interactive shell" is the shell as experienced in a terminal, as opposed to when writing shell scripts.) In the end we had nice history management, a shorthand for `cd`, the ability to jump to a directory we were in several `cd`s back, command completion with an interactive menu, inline suggestions, completions for various programs, an intuitive way to filter history, syntax highlighting in the terminal, and an informative prompt. In short, the result was interactive shell that felt _smart_ and helped us find and do things more quickly without any need to learn additional tools.

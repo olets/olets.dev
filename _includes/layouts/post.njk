@@ -10,13 +10,13 @@ templateClass: tmpl-post
     <div class="space-y-8">
       <h1 class="heading-2">{{ title }}</h1>
 
-      <div>Posted <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></div>
+      <div class="opacity-80">Posted <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></div>
 
       {% if tags %}
         <div>
           <span class="font-bold">Tags:</span>
 
-          <ul class="flex-wrap gap-4 inline-flex list-none ml-4 pl-0">
+          <ul class="flex-wrap gap-2 inline-flex list-none pl-0">
             {% for tag in tags | sort | filterTagList %}
               <li>
                 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}

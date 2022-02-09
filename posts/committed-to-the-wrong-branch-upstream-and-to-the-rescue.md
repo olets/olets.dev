@@ -8,6 +8,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/committed-to-the-wrong-branch-upstream-and-to-the-rescue/
+imageFilename: post-gitrevisions.jpg
 ---
 
 I get into this situation sometimes. Maybe you do too. I merge feature work into a branch used to collect features, and then continue development but on that branch instead of back on the feature branch
