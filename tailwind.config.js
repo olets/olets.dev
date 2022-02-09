@@ -36,7 +36,7 @@ module.exports = {
             "--tw-prose-bullets": theme('colors.accent.400'),
             th: {
               textTransform: 'uppercase',
-            }
+            },
           },
         },
       }),

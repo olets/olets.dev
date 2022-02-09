@@ -69,6 +69,8 @@ First up for our scenario: the `-` shorthand, which refers to the previously che
 <th>v2</th>
 <th>v1</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
@@ -119,7 +121,7 @@ git checkout feature
 
 </td>
 </tr>
-</thead>
+</tbody>
 </table>
 
 That's as far as `-` gets us. We cannot use it when cherry-picking a range
@@ -184,6 +186,7 @@ Here's where we are (🎉 marks wins from `-`, 💥 marks the win from `@{-1}`)
 <th>v3</th>
 <th>v1</th>
 </tr>
+<tbody>
 <tr>
 <td>
 
@@ -234,7 +237,7 @@ git checkout feature
 
 </td>
 </tr>
-</thead>
+</tbody>
 </table>
 
 One down, two to go: we're still relying on memory for the remote's name and the remote branch's name, and we're still typing both out in full. Can we replace those with generic shorthands?
@@ -296,6 +299,7 @@ Going back to our scenario, it means short, portable commands with a minimum hum
 <th>v3</th>
 <th>v1</th>
 </tr>
+<tbody>
 <tr>
 <td>
 
@@ -346,7 +350,7 @@ git checkout feature
 
 </td>
 </tr>
-</thead>
+</tbody>
 </table>
 
 ## Make the things you repeat the easiest to do
