@@ -3,6 +3,7 @@ layout: layouts/sidebar.njk
 templateClass: tmpl-post
 ---
 
+{% from "Image.njk" import Image %}
 {% from "PostNav.njk" import PostNav %}
 {% from "Prose.njk" import Prose %}
 
@@ -40,6 +41,17 @@ templateClass: tmpl-post
       <p class="italic">A version of this post originally appeared on <a href="{{ original.url | url }}">{{ original.source }}</a></p>
     {% endif %}
   </div>
+
+  {% if imageFilename %}
+    {{ Image({
+      filename: imageFilename,
+      imgixConfig: {
+        ar: "16:9",
+        fit: "crop",
+        w: 1000
+      }
+    }) }}
+  {% endif %}
 
   {% set proseContent %}
     {{ content | safe }}
