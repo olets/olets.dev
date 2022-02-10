@@ -1,4 +1,9 @@
-{% from "ImgixUrl.njk" import ImgixUrl %}
+{% from "ImgixUrl.njk" import ImgixUrl -%}
+
+{% set pageTitle = title or metadata.title %}
+{% if pageTitle != metadata.siteTitle %}
+  {% set pageTitle = pageTitle ~ " | " ~ metadata.siteTitle %}
+{% endif %}
 
 <!doctype html>
 <html class="antialiased scroll-smooth text-black" lang="{{ metadata.language }}" dir="ltr">
@@ -6,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ title or metadata.title }}</title>
+    <title>{{ pageTitle }}</title>
 
     <script src="https://curious-cheerful.olets.dev/script.js" data-site="FSYFQZQY" defer></script>
 
@@ -23,10 +28,10 @@
     <meta name="author" content="{{ metadata.author.name }}" />
     <meta name="description" content="{{ description or metadata.description }}">
 
-    <meta property="og:title" content="{{ title or metadata.title }}">
+    <meta property="og:title" content="{{ pageTitle }}">
     <meta property="og:description" content="{{ description or metadata.description }}">
     <meta property="og:url" content="{{ metadata.url }}">
-    <meta property="og:site_name" content="{{ title or metadata.title }}">
+    <meta property="og:site_name" content="{{ metadata.site }}">
     <meta property="og:type" content="website">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -37,7 +42,7 @@
         w: 1200
       }
     }) }}">
-    <meta name="twitter:title" content="{{ title or metadata.title }}">
+    <meta name="twitter:title" content="{{ pageTitle }}">
     <meta name="twitter:creator" content="@olets">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="{{ description or metadata.description }}">
