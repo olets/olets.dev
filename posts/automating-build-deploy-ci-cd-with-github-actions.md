@@ -258,8 +258,6 @@ jobs:
 
 Make sure Actions are enabled in your GitHub repo: repo > Settings tab > Actions > "Allow all actions" or "Allow select actions". Adapt the workflows to your needs, then commit them in a non-trunk branch and push to GitHub. Go to your GitHub repo's Actions tab to see the `build` workflow running. Merge into your trunk branch, push, and go to the Actions tab to see the `build-deploy` workflow running.
 
-Let us know if you use or adapt these workflows in a project! Viget is on Twitter at [@viget](https://twitter.com/viget).
-
 ## Bonus
 
 Every GitHub Actions workflow has a status badge at `<workflow file path>/badge.svg`. To show the world that production is healthy, modify this snippet and add it to your README.md:
