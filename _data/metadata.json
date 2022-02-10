@@ -1,5 +1,6 @@
 {
   "title": "olets.dev",
+  "siteTitle": "olets.dev",
   "url": "https://olets.dev/",
   "language": "en-US",
   "description": "Henry Bley-Vroman (olets)",
@@ -17,5 +18,6 @@
     "name": "Henry Bley-Vroman",
     "email": "olets@olets.dev",
     "url": "https://example.com/about-me/"
-  }
+  },
+  "imageFilename": "oletsdev-fb--waggle-confute-shad.jpg"
 }
