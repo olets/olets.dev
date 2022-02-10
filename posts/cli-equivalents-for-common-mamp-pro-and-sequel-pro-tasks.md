@@ -10,7 +10,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/cli-equivalents-for-common-mamp-pro-and-sequel-pro-tasks/
-imageFilename: post-mamp-mysql-cli.jpg
+#imageFilename: post-mamp-mysql-cli.jpg
 id: 5232
 ---
 

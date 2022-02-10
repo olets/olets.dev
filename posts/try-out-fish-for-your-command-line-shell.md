@@ -8,7 +8,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
-imageFilename: post-fish-shell.jpg
+#imageFilename: post-fish-shell.jpg
 id: 11744
 ---
 

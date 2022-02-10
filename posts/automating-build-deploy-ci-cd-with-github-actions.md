@@ -9,7 +9,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
-imageFilename: post-github-actions.jpg
+#imageFilename: post-github-actions.jpg
 id: 2474
 ---
 

@@ -8,7 +8,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/committed-to-the-wrong-branch-upstream-and-to-the-rescue/
-imageFilename: post-gitrevisions.jpg
+# imageFilename: post-gitrevisions.jpg
 id: 20212
 ---
 
