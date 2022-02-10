@@ -18,7 +18,7 @@
   {% endif %}
 
   <div>
-    <ol reversed class="gap-6 grid grid-cols-12 mt-8" style="counter-reset: start-from {{ (counterStart or postslist.length) + 1 }}">
+    <ol reversed class="gap-12 grid grid-cols-12 mt-8" style="counter-reset: start-from {{ (counterStart or postslist.length) + 1 }}">
       {% for post in posts %}
         <li class="col-span-full {{ classes }}">
           {% set description %}
