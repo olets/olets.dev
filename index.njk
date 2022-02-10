@@ -36,7 +36,7 @@ eleventyNavigation:
   </div>
 </header>
 
-<main class="container mx-auto mt-12 md:mt-16 lg:mt-20 space-y-12 md:space-y-16 lg:space-y-20">
+<main class="grid xl:grid-cols-2 gap-24 container mx-auto mt-12 md:mt-16 lg:mt-20 space-y-12 md:space-y-0">
   <section id="latest">
     {% set maxPosts = collections.posts.length | min(4) %}
     {% set postslist = collections.posts | head(-maxPosts) %}
@@ -45,14 +45,18 @@ eleventyNavigation:
     <h2 class="heading-2">Latest {% if maxPosts > 1 %}Posts{% else %}Post{% endif %}</h2>
 
     <div class="mt-8 text-3xl">
-      {{ Text({ content: "👉 See <a href=\"{{ '/posts/' | url }}\">all posts</a>. 👈"|safe }) }}
+      {{ Text({ content: "See <a href=\"{{ '/posts/' | url }}\">all posts</a>."|safe }) }}
     </div>
 
     {{ PostsList({
-      classes: "lg:col-span-4 sm:col-span-6 xl:col-span-3",
+      classes: "sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-2",
       counterStart: postslistCounter,
       posts: postslist|reverse
     }) }}
+
+    <div class="mt-8 text-3xl">
+      {{ Text({ content: "See <a href=\"{{ '/posts/' | url }}\">all posts</a>."|safe }) }}
+    </div>
   </section>
 
   <section id="software">

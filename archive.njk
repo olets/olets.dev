@@ -14,7 +14,7 @@ eleventyNavigation:
     <h1 class="heading-1">Posts</h1>
 
     {{ PostsList({
-      classes: "lg:col-span-4 sm:col-span-6",
+      classes: "sm:grid-cols-2 lg:grid-cols-3",
       posts: collections.posts|reverse
     })}}
   </div>
