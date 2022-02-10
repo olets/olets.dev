@@ -10,6 +10,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/set-up-aws-cli-and-download-your-s3-files-from-the-command-line/
+id: 29752
 ---
 
 
@@ -47,15 +48,10 @@ Documentation for the following steps is [here](http://docs.aws.amazon.com/cli/l
 
 1. Log into the [IAM Console](https://console.aws.amazon.com/iam/home?#home).
 2. Go to **Users**.
-    <kbd>![AWS web interface for viewing all users](https://static.viget.com/_200xAUTO_crop_center-center/aws-cli-1-users.png?mtime=20180125160134)</kbd>
 3. Click on your **user name** (the name not the checkbox).
-    <kbd>![AWS web interface for managing a user](https://static.viget.com/_639xAUTO_crop_center-center/aws-cli-2-user.png?mtime=20180125160149)</kbd>
 4. Go to the **Security credentials** tab.
-    <kbd>![AWS web interface for viewing user security credentials](https://static.viget.com/_581xAUTO_crop_center-center/aws-cli-3-security-credentials.png?mtime=20180125160148)</kbd>
 5. Click **Create access key**. Don't close that window yet!
-    <kbd>![AWS web interface for creating a new access key](https://static.viget.com/_801xAUTO_crop_center-center/aws-cli-4-create-key.png?mtime=20180125160151)</kbd>
 6. You'll see your **Access key ID**. Click "Show" to see your **Secret access key**.
-    <kbd>![AWS web interface for revealing your secret key](https://static.viget.com/_1166xAUTO_crop_center-center/aws-cli-5-keys.png?mtime=20180125160150)</kbd>
 7. Download the key pair for safe keeping, add the keys to your password app of choice, or do whatever you do to keep secrets safe. Remember this is the last time Amazon will show this secret access key.
 
 ## 3. Configure AWS CLI

@@ -13,11 +13,11 @@ original:
   url: https://www.viget.com/articles/fundamental-erb-and-twig-for-front-end-development/
 ---
 
-Twig and ERB are the two front-end templating languages I use most when developing websites. Here I document the ways each write just about everything to build views: comments, conditionals, variables and undefined variables, interpolation, loops and the loop index, slicing, handling whitespace, retrieving an keyed values, and templating with blocks and partials. If you're familiar with one of Twig or ERB, use this as a cross-reference to translate your knowledge of the one language into the other. If you haven't used either, this should get you up and running quickly. Read on to learn more about ERB and Twig, or [skip ahead](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#table-of-contents) to the code snippet reference section.
+Twig and ERB are the two front-end templating languages I use most when developing websites. Here I document the ways each write just about everything to build views: comments, conditionals, variables and undefined variables, interpolation, loops and the loop index, slicing, handling whitespace, retrieving an keyed values, and templating with blocks and partials. If you're familiar with one of Twig or ERB, use this as a cross-reference to translate your knowledge of the one language into the other. If you haven't used either, this should get you up and running quickly. Read on to learn more about ERB and Twig, or [skip ahead](#table-of-contents) to the code snippet reference section.
 
 ## What is Twig?
 
-[Twig](https://twig.symfony.com/) is SensioLabs' Django- / Jinja-like templating language for PHP. The recommended extension for Twig files is `.twig`, `.<compiled_extension>.twig` is useful, and `.html` —though inaccurate— is common in front-end templating. It's used by SensioLabs' [Symfony](https://symfony.com/); by [Drupal 8](https://www.drupal.org/docs/8/creating-custom-modules/getting-started-background-prerequisites-drupal-8), which is built on Symfony; and by [Craft](https://craftcms.com/), Viget's favorite pre-built CMS. (Read why it's our favorite [here](https://www.viget.com/articles/why-you-should-update-to-craft-3-asap/).)
+[Twig](https://twig.symfony.com/) is SensioLabs' Django- / Jinja-like templating language for PHP. The recommended extension for Twig files is `.twig`, `.<compiled_extension>.twig` is useful, and `.html` —though inaccurate— is common in front-end templating. It's used by SensioLabs' [Symfony](https://symfony.com/); by [Drupal 8](https://www.drupal.org/docs/8/creating-custom-modules/getting-started-background-prerequisites-drupal-8), which is built on Symfony; and by [Craft](https://craftcms.com/).
 
 Twig is a great language for building web front ends: it is full-featured without having more than one person could hope to learn, it reads fairly closely to English, and it has great [official documentation](https://twig.symfony.com/doc/2.x/#reference). Twig is especially notable for its powerful support for complex inheritance across templates. Check out the [`use`](https://twig.symfony.com/doc/2.x/tags/use.html) tag, the [`embed`](https://twig.symfony.com/doc/2.x/tags/embed.html) tag, and the [`block()`](https://twig.symfony.com/doc/2.x/functions/block.html) function.
 
@@ -35,7 +35,7 @@ ERB (Embedded Ruby) is a feature of Ruby that lets you —you guessed it!— emb
 
 Because it can do anything Ruby can do, it's extremely powerful, has a much steeper learning curve than Twig, and can do a lot that isn't relevant to front-end templating. There's no cannonical ERB-for-front-end-developers documentation, and the Rails official documentation is immense and hard to dig through. Some resources if for learning ERB:
 
-- APIdock's [ActionView::Layouts module documentation](https://www.viget.com/admin/entries/article/[ActionView](https://apidock.com/rails/ActionView)::[Layouts](https://apidock.com/rails/ActionView/Layouts)) and their documentation for the "included modules" listed under [ActionView::Helpers](https://apidock.com/rails/v4.2.7/ActionView/Helpers) (the [UrlHelper](https://apidock.com/rails/ActionView/Helpers/UrlHelper)'s `link...` and `button_to` methods are essential.
+- APIdock's [ActionView](https://apidock.com/rails/ActionView)::[Layouts](https://apidock.com/rails/ActionView/Layouts) and their documentation for the "included modules" listed under [ActionView::Helpers](https://apidock.com/rails/v4.2.7/ActionView/Helpers) (the [UrlHelper](https://apidock.com/rails/ActionView/Helpers/UrlHelper)'s `link...` and `button_to` methods are essential.
 - The APIdock [TagHelper](https://apidock.com/rails/ActionView/Helpers/TagHelper)'s documentation for the [`content tag`](https://apidock.com/rails/v4.2.7/ActionView/Helpers/TagHelper/content_tag) and [`tag`](https://apidock.com/rails/v4.2.7/ActionView/Helpers/TagHelper/tag) methods are useful.
 - If you're building forms familiarize yourself with the methods of the [FormHelper](https://apidock.com/rails/ActionView/Helpers/FormHelper), [FormTagHelper](https://apidock.com/rails/ActionView/Helpers/FormTagHelper), and [FormOptionsHelper](https://apidock.com/rails/ActionView/Helpers/FormOptionsHelper)) (some will prefer the appearance of DevDocs — c.f. their [ActionView](http://devdocs.io/rails~5.1-actionview/) and [ActionView/Helpers](http://devdocs.io/rails~5.1-actionview-helpers/) documentation).
 - LaunchSchool's [Loops & Iterators](https://launchschool.com/books/ruby/read/loops_iterators) is a good resource for understanding loops in Ruby.
@@ -44,37 +44,37 @@ Because it can do anything Ruby can do, it's extremely powerful, has a much stee
 
 ## ERB and Twig Snippets: Contents
 
-1. [Delimiters](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--delimiters)
-   - [Comments](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--comments)
-     - [Inline comments](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--inline-comments)
-     - [Block comments](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--block-comments)
-   - [Outputting values](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--outputting-values)
-   - [Execution (Control Code)](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--execution)
-2. [Conditionals](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--conditionals)
-   - [Single-statement conditionals](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--single-statement-conditionals)
-   - [Multi-statement conditionals](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--multi-statement-conditionals)
-   - [Conditionals with logical operators](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--conditionals-with-logical-operators)
-   - [Truth and falsity of zero in Boolean contexts](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--truth-and-falsity-of-zero-in-boolean-contexts)
-3. [Defining variables](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--defining-variables)
-   - [Line breaks within a variable's value](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--line-breaks-within-a-variables-value)
-   - [Dealing with undefined variables](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--dealing-with-undefined-variables)
-   - [Variable interpolation](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--variable-interpolation)
-4. [Concatenation](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--concatenation)
-5. [Iteration (loops)](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--iteration-loops)
-   - [Iterating over items](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--iterating-over-items)
-   - [Using the loop index, 0-indexed](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--using-the-loop-index-0-indexed)
-   - [Using the loop index, 1-indexed](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--using-the-loop-index-1-indexed)
-   - [Iterating a certain number of times](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--iterating-a-certain-number-of-times)
-6. [Inspecting data](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--inspecting-data)
-7. [Slicing](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--slicing)
-   - [Shorthand to slice the first count items](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--shorthand-to-slice-the-first-count-items)
-   - [Shorthand for everything after the start item](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--shorthand-for-everything-after-the-start-item)
-8. [Trimming whitespace](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--trimming-whitespace)
-   - [Trimming space between HTML elements](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--trimming-space-between-html-elements)
-9. [Keyed values](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--keyed-values)
-10. [Vertical inheritance](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--vertical-inheritance)
-    - [Vertical inheritance with default content in the parent](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--vertical-inheritance-with-default-content-in-the-parent)
-11. [Using partials](https://www.viget.com/admin/entries/article/27230-fundamental-erb-and-twig-for-front-end-development#section--using-partials)
+1. [Delimiters](#section--delimiters)
+   - [Comments](#section--comments)
+     - [Inline comments](#section--inline-comments)
+     - [Block comments](#section--block-comments)
+   - [Outputting values](#section--outputting-values)
+   - [Execution (Control Code)](#section--execution)
+2. [Conditionals](#section--conditionals)
+   - [Single-statement conditionals](#section--single-statement-conditionals)
+   - [Multi-statement conditionals](#section--multi-statement-conditionals)
+   - [Conditionals with logical operators](#section--conditionals-with-logical-operators)
+   - [Truth and falsity of zero in Boolean contexts](#section--truth-and-falsity-of-zero-in-boolean-contexts)
+3. [Defining variables](#section--defining-variables)
+   - [Line breaks within a variable's value](#section--line-breaks-within-a-variables-value)
+   - [Dealing with undefined variables](#section--dealing-with-undefined-variables)
+   - [Variable interpolation](#section--variable-interpolation)
+4. [Concatenation](#section--concatenation)
+5. [Iteration (loops)](#section--iteration-loops)
+   - [Iterating over items](#section--iterating-over-items)
+   - [Using the loop index, 0-indexed](#section--using-the-loop-index-0-indexed)
+   - [Using the loop index, 1-indexed](#section--using-the-loop-index-1-indexed)
+   - [Iterating a certain number of times](#section--iterating-a-certain-number-of-times)
+6. [Inspecting data](#section--inspecting-data)
+7. [Slicing](#section--slicing)
+   - [Shorthand to slice the first count items](#section--shorthand-to-slice-the-first-count-items)
+   - [Shorthand for everything after the start item](#section--shorthand-for-everything-after-the-start-item)
+8. [Trimming whitespace](#section--trimming-whitespace)
+   - [Trimming space between HTML elements](#section--trimming-space-between-html-elements)
+9. [Keyed values](#section--keyed-values)
+10. [Vertical inheritance](#section--vertical-inheritance)
+    - [Vertical inheritance with default content in the parent](#section--vertical-inheritance-with-default-content-in-the-parent)
+11. [Using partials](#section--using-partials)
 
 ## Delimiters
 

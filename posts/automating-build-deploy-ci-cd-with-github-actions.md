@@ -10,6 +10,7 @@ original:
   source: viget.com
   url: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
 imageFilename: post-github-actions.jpg
+id: 2474
 ---
 
 Projects hosted on GitHub can implement [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) (CI), [continuous deployment](https://en.wikipedia.org/wiki/Continuous_deployment) (CD), and [continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery) (the other CD) with **GitHub Actions** workflows. This works in **public and private repos**. (There are [tiered limits](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions) for storage and time.)
@@ -285,4 +286,4 @@ Every GitHub Actions workflow has a status badge at `<workflow file path>/badge.
 - [download-artifact action](https://github.com/actions/download-artifact)
 - [sebastianpopp/ftp-action action](https://github.com/marketplace/actions/ftp-action)
 - [setup-node action](https://github.com/actions/setup-node)
-- [upload-artifact action](https://www.viget.com/admin/entries/article/actions/upload-artifact)
+- [upload-artifact action](https://github.com/actions/upload-artifact)

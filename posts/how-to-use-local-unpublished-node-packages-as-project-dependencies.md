@@ -11,6 +11,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/how-to-use-local-unpublished-node-packages-as-project-dependencies/
+id: 10426
 ---
 
 There are times when you want to install a local package as a project dependency. You might be writing a package for general distribution; or maybe you are contributing to an open source package, or a private personal package, or something internal to your team. You are working on local changes and you need to test them out before you commit, let alone before you open a pull request or deploy an update. What is the best way to add the local copy of the package to a local project for real work testing?
@@ -21,7 +22,7 @@ You can push your updates to a remote, and add that version as a dependency. For
 
 There are `npm add relative/path` and `yarn add file:relative/path`, which copy the package directory over to the project's node_modules. The npm command does not install dependencies. Neither responds to updates you make to the package. Plus using a relative path can get unwieldy with `../`s.
 
-There are `npm link` and `yarn link`. Both add a dependency as local symlink. ([`npm link` docs](https://docs.npmjs.com/cli/link), [`yarn link` docs](https://yarnpkg.com/en/docs/cli/link).) But this solution has [technical complications](https://github.com/yarnpkg/yarn/issues/1761), and the npm and the yarn implimentations give people trouble (as of this writing there are about 40 open [`npm link` issues](https://www.viget.com/admin/entries/article/[https://npm.community/search?q="npm link"](https://npm.community/search?q="npm link) and over 150 open [`yarn link` issues](https://github.com/yarnpkg/yarn/issues?utf8=✓&q=is%3Aissue+is%3Aopen+"yarn+link")). If you have tried to use symlinked dependencies while developing a package you've probably run into into a stumbling block, whether simply an unexpected `unlink` behavior, trouble with peer dependencies, or something bigger.
+There are `npm link` and `yarn link`. Both add a dependency as local symlink. ([`npm link` docs](https://docs.npmjs.com/cli/link), [`yarn link` docs](https://yarnpkg.com/en/docs/cli/link).) But this solution has [technical complications](https://github.com/yarnpkg/yarn/issues/1761), and the npm and the yarn implimentations give people trouble (as of this writing there are about 40 open [`npm link` issues](https://npm.community/search?q=npm%20link) and over 150 open [`yarn link` issues](https://github.com/yarnpkg/yarn/issues?utf8=✓&q=is%3Aissue+is%3Aopen+"yarn+link")). If you have tried to use symlinked dependencies while developing a package you've probably run into into a stumbling block, whether simply an unexpected `unlink` behavior, trouble with peer dependencies, or something bigger.
 
 So what to do? The answer for me is [@whitecolor](https://medium.com/@_whitecolor)'s [**yalc**](https://github.com/whitecolor/yalc).
 

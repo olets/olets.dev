@@ -9,9 +9,10 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/set-up-a-windows-10-virtual-machine-and-browser-test-ie-11-and-edge-on-mac/
+id: 20537
 ---
 
-*This article is part of a series on running cross-browser tests directly on your primary computer. The first in the series is [Set Up Simulator and Test iOS Mobile Safari on Mac](https://www.viget.com/articles/set-up-simulator-and-test-ios-mobile-safari-on-mac/#entry:25158:url).*
+*This article is part of a series on running cross-browser tests directly on your primary computer. The first in the series is [Set Up Simulator and Test iOS Mobile Safari on Mac](/posts/set-up-simulator-and-test-ios-mobile-safari-on-mac).*
 
 ------
 
@@ -51,13 +52,7 @@ Installers come on physical media (DVDs or thumb drives) or in disk image files 
 ## Create your virtual machine
 
 1. Open VirtualBox, and click "New"
-
-   ![img](https://static.viget.com/_1540xAUTO_crop_center-center/pristine-virtualbox.png?mtime=20181210183450)
-
 2. Fill out the "Name." Using the OS as the name is a good convention, and will help you keep track of things later on. And if you name the VM after the OS, VirtualBox will automatically select the "Type" and "Version".
-
-   ![img](https://static.viget.com/_1526xAUTO_crop_center-center/new-windows-10-vm.png?mtime=20181210183618)
-
 3. On the next screen, bump the "Memory size." The default is 2048MB (2GB). 4096MB (4GB) is a good place to start. If your computer has at least 16GB of RAM, consider giving 8192MB (8GB) to the virtual machine. You can always change this later if you find it makes your actual computer too slow when the virtual is running.
 
 4. On the next two screens, follow the defaults for:
@@ -91,8 +86,6 @@ Installers come on physical media (DVDs or thumb drives) or in disk image files 
 ## Put Windows on the VM
 
 When you're done with the settings, hit okay. Now double click on your VM in the VirtualBox sidebar. Click the "browse" icon, and locate the `.iso` you downloaded.
-
-![img](https://static.viget.com/_1138xAUTO_crop_center-center/select-windows10-iso.png?mtime=20181210183941)
 
 At this point I recommend closing all other apps that take a lot of memory.
 

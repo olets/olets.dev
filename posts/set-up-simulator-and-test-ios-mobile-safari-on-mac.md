@@ -8,9 +8,10 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/set-up-simulator-and-test-ios-mobile-safari-on-mac/
+id: 18878
 ---
 
-*This article is part of a series on running cross-browser tests directly on your primary computer. The next in the series is [Set Up a Windows 10 Virtual Machine and Run Internet Explorer 11 and Edge on Mac or Linux](https://www.viget.com/articles/set-up-a-windows-10-virtual-machine-and-browser-test-ie-11-and-edge-on-mac/#entry:25964:url).*
+*This article is part of a series on running cross-browser tests directly on your primary computer. The next in the series is [Set Up a Windows 10 Virtual Machine and Run Internet Explorer 11 and Edge on Mac or Linux](/posts/set-up-a-windows-10-virtual-machine-and-browser-test-ie-11-and-edge-on-mac/).*
 
 ------
 
@@ -42,8 +43,6 @@ Open Simulator (double click it from the Applications folder, or open it from Sp
 
 Look at that! An iOS device!
 
-![iPhone XS Max in Simulator](https://static.viget.com/simulator.png#asset:25149:url)
-
 Now you can click on the Safari icon and start browsing! But read on to get the most out of Simulator…
 
 ## Configuring Simulator
@@ -56,21 +55,15 @@ By default, you have to use the on-screen keyboard to type in Simulator's iOS de
 
 In Simulator's "Hardware" menu, under "Keyboard," check "Connect Hardware Keyboard."
 
-![Connect Hardware Keyboard is under Keyboard in Simulator's Hardware menu](https://static.viget.com/_1702xAUTO_crop_center-center/simulator-keyboard.png?mtime=20181108141947)
-
 ### Share the clipboard across macOS and your Simulator devices
 
 By default, the standard command v keyboard shortcut will not work to paste to Simulator from any other app. To turn on the shared clipboard (known in Apple devices as the pasteboard), select "Automatically Sync Pasteboard" from the "Edit" menu.
-
-![Setting Simulator to automatically sync the pasteboard across devices and with the macOS clipboard.](https://static.viget.com/_964xAUTO_crop_center-center/simulator-pasteboard.png?mtime=20181108141944)
 
 *Note for users running older versions of Xcode:* This worked differently prior to Simulator 10. You'll have to use shift command v to paste the macOS clipboard into the Simulator pasteboard, and *then* you can use command v to paste from the pasteboard.
 
 ## Switching Devices
 
 With Simulator you can test any Apple device. Select the device you want to use from the "Device" submenu in the "Hardware" menu. By default you'll have only the latest version of iOS, tvOS, and watchOS, but you can easily install "runtimes" for older versions.
-
-![Simulator's Device menu, showing iOS 9.3, iOS 10.3, iOS 12.0, tvOS 12.0, and watchOS 5.0. iOS 12.0 is selected, revealing a submenu of devices including iPhones 5s to XS Max, and several generations of iPad, iPad Pro, and iPad Air](https://static.viget.com/_964xAUTO_crop_center-center/simulator-devices.png?mtime=20181108141955)
 
 ### Add support for older versions of iOS, tvOS, and watchOS
 
@@ -80,11 +73,8 @@ That will open the Xcode app's "Devices" window. Select the "Simulators" tab. Th
 
 Under "OS Version," select "Download more simulator runtimes."
 
-![Adding a runtime to Xcode](https://static.viget.com/_836xAUTO_crop_center-center/add-runtimes-to-iphone-6.png?mtime=20181108145034)
-
 Another new window opens, Xcode's "Components" preferences' list of simulators. Click the downward arrow button next to the OS you want to install support for.
 
-![Xcode runtimes list](https://static.viget.com/_845xAUTO_crop_center-center/xcode-simulators.png?mtime=20181108141957)
 
 When the download is complete, close the window. Back in the "Create a new simulator" dialog:
 
@@ -101,8 +91,6 @@ There you have it! If you aren't familiar with the command line and want to unde
 By default, you can scroll in a Simulator device by clicking and dragging. With the hardware keyboard connected, you can also use the keyboard arrow keys. If you're used to using trackpad scrolling (e.g. two-finger scrolling) in macOS, you may want to turn it on for Simulator too. While two-finger dragging isn't supported, three-finger dragging is. As of this writing, the experience really isn't good: there can be a initial delay, and then another delay before inertial scrolling kicks in. Here's how to turn it on:
 
 From the System menu () open the "System Preferences," and from there, open the "Accessibility" preferences. Under "Mouse & Trackpad," open the "Trackpad Options" and turn on "three finger drag."
-
-![Three finger dragging option in the Accessibility system preferences](https://static.viget.com/_686xAUTO_crop_center-center/three-finger-drag.png?mtime=20181108141959)
 
 ### Limited-audience Bonus 2: Opening multiple Simulator devices on older versions of Xcode
 

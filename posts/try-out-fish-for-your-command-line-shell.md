@@ -9,9 +9,10 @@ original:
   source: viget.com
   url: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
 imageFilename: post-fish-shell.jpg
+id: 11744
 ---
 
-In the article [Configure Zsh Options & Plugins for Productivity in macOS's Default Shell](https://www.viget.com/articles/zsh-config-productivity-plugins-for-mac-oss-default-shell/) I walked through customizing zsh's interactive shell to add what I consider key features. (An "interactive shell" is the shell as experienced in a terminal, as opposed to when writing shell scripts.) In the end we had nice history management, a shorthand for `cd`, the ability to jump to a directory we were in several `cd`s back, command completion with an interactive menu, inline suggestions, completions for various programs, an intuitive way to filter history, syntax highlighting in the terminal, and an informative prompt. In short, the result was interactive shell that felt _smart_ and helped us find and do things more quickly without any need to learn additional tools.
+In the article [Configure Zsh Options & Plugins for Productivity in macOS's Default Shell](/posts/zsh-config-productivity-plugins-for-mac-oss-default-shell/) I walked through customizing zsh's interactive shell to add what I consider key features. (An "interactive shell" is the shell as experienced in a terminal, as opposed to when writing shell scripts.) In the end we had nice history management, a shorthand for `cd`, the ability to jump to a directory we were in several `cd`s back, command completion with an interactive menu, inline suggestions, completions for various programs, an intuitive way to filter history, syntax highlighting in the terminal, and an informative prompt. In short, the result was interactive shell that felt _smart_ and helped us find and do things more quickly without any need to learn additional tools.
 
 But getting zsh there took significant configuration. There are other approaches — Oh My Zsh, for example, is an enormous collection of zsh configurations you install in one go. Oh My Zsh did a lot to popularize zsh as a shell for people who wanted a great interactive shell experience and snazzy prompt. But it includes more customization and extension than most people need or will even discover, and as each of those confers a (usually small) performance hit some long-term users end up switching to a more paired-down configuration — that's what the previous post is.
 
@@ -35,13 +36,13 @@ Installing fish doesn't commit you to using it. You can switch an individual ses
 
 Any other open sessions (i.e. other open terminal windows) and any other sessions you start won't be affected. If you want to get out of your fish session and switch it to bash or zsh or anything else just run `bash` or `zsh` etc.
 
-If you're coming from bash, fish will automatically import your history (and [here's the procedure](https://github.com/fish-shell/fish-shell/issues/3870#issuecomment-282524208) for merging bash history into an existing fish history). If you're coming from zsh and want to migrate your history over, there's [rsalmei/zsh-history-to-fish](https://www.viget.com/admin/entries/article/rsalmei/zsh-history-to-fish) (and [here's the procedure](https://github.com/fish-shell/fish-shell/issues/4400#issuecomment-509685728) for merging zsh history into an existing fish history).
+If you're coming from bash, fish will automatically import your history (and [here's the procedure](https://github.com/fish-shell/fish-shell/issues/3870#issuecomment-282524208) for merging bash history into an existing fish history). If you're coming from zsh and want to migrate your history over, there's [rsalmei/zsh-history-to-fish](https://github.com/rsalmei/zsh-history-to-fish) (and [here's the procedure](https://github.com/fish-shell/fish-shell/issues/4400#issuecomment-509685728) for merging zsh history into an existing fish history).
 
 If you decide to make fish your default shell, run `chsh -s /usr/local/bin/fish`
 
 ## Comparing fish and zsh interactive shells
 
-Here's a rundown of the features in my recommended zsh setup. Tl;dr: fish does it out of the box. All zsh configuration instructions are given in [Configure zsh Options & Plugins for Productivity in macOS's Default Shell](https://www.viget.com/articles/zsh-config-productivity-plugins-for-mac-oss-default-shell/).
+Here's a rundown of the features in my recommended zsh setup. Tl;dr: fish does it out of the box. All zsh configuration instructions are given in [Configure zsh Options & Plugins for Productivity in macOS's Default Shell](/posts/zsh-config-productivity-plugins-for-mac-oss-default-shell/).
 
 Feature | Fish | zsh |
 ---|---|---

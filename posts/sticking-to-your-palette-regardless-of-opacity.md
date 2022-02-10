@@ -10,6 +10,7 @@ layout: layouts/post.njk
 original:
   source: newmediacampaigns.com
   url: https://www.newmediacampaigns.com/blog/sticking-to-your-palette-regardless-of-opacity
+id: 5225
 ---
 
 A strong, cohesive color palette is key when coming up with a visual design. Colors influence a viewer's emotions and so set the mood.[1](https://www.newmediacampaigns.com/blog/sticking-to-your-palette-regardless-of-opacity#footnote-1) Along with typography, color scheme is important to branding and creating corporate identity. Transparency—a common feature of modern web design—affects color appearance and so can add unwanted variation into a site's palette, but this change can be accounted for by calculating a new starting color.
