@@ -11,6 +11,7 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/fundamental-erb-and-twig-for-front-end-development/
+id: 14378
 ---
 
 Twig and ERB are the two front-end templating languages I use most when developing websites. Here I document the ways each write just about everything to build views: comments, conditionals, variables and undefined variables, interpolation, loops and the loop index, slicing, handling whitespace, retrieving an keyed values, and templating with blocks and partials. If you're familiar with one of Twig or ERB, use this as a cross-reference to translate your knowledge of the one language into the other. If you haven't used either, this should get you up and running quickly. Read on to learn more about ERB and Twig, or [skip ahead](#table-of-contents) to the code snippet reference section.
@@ -88,10 +89,10 @@ Because it can do anything Ruby can do, it's extremely powerful, has a much stee
   <%# comment %>
   ```
 
-- **Twig**: `{# … #}`
+- **Twig**: `{% raw %}{# … #}{% endraw %}`
 
   ```twig
-  {# comment #}
+  {% raw %}{# comment #}{% endraw %}
   ```
 
 #### Block comments
@@ -119,19 +120,19 @@ Because it can do anything Ruby can do, it's extremely powerful, has a much stee
                   =end %>
   ```
 
-- **Twig**: `{# … #}`
+- **Twig**: {% raw %}`{# … #}`{% endraw %}
 
   ```twig
-  {#
+  {% raw %}{#
   block comment
-  #}
+  #}{% endraw %}
   ```
 
   or
 
   ```twig
-  not a comment {# block
-  comment #} not a comment
+  not a comment {% raw %}{# block
+  comment #}{% endraw %} not a comment
   ```
 
 ### Outputting values
@@ -143,11 +144,11 @@ Because it can do anything Ruby can do, it's extremely powerful, has a much stee
   <%= 1 + 2 %>        <%# output: `3` %>
   ```
 
-- **Twig**: `{{ }}`
+- **Twig**: {% raw %}`{{ }}`{% endraw %}
 
   ```twig
-  {{ "print this" }} {# output: `print this` #}
-  {{ 1 + 2 }}        {# output: `3` #}
+  {% raw %}{{ "print this" }} {# output: `print this` #}
+  {{ 1 + 2 }}        {# output: `3` #}{% endraw %}
   ```
 
 ### Execution (Control Code)
@@ -158,10 +159,10 @@ Because it can do anything Ruby can do, it's extremely powerful, has a much stee
   <% if … do %> … <% end %>
   ```
 
-- **Twig**: `{% … %}`
+- **Twig**: {% raw %}`{% … %}`{% endraw %}
 
   ```twig
-  {% if … %} … {% endif %}
+  {% raw %}{% if … %} … {% endif %}{% endraw %}
   ```
 
 ## Conditionals
@@ -196,13 +197,13 @@ Because it can do anything Ruby can do, it's extremely powerful, has a much stee
 
   ```twig
   {# assuming Twig's strict variables option is turned off OR x, y, z, and n are defined #}
-  {% if x %}
+  {% raw %}{% if x %}{% endraw %}
       y
-  {% elseif z == n %}{# note the spelling of elseif #}
+  {% raw %}{% elseif z == n %}{# note the spelling of elseif #}{% endraw %}
       0
-  {% else %}
+  {% raw %}{% else %}{% endraw %}
       1
-  {% endif %}
+  {% raw %}{% endif %}{% endraw %}
   ```
 
 ### Conditionals with logical operators
@@ -225,6 +226,7 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - Twig
 
   ```twig
+  {% raw %}
   {# assuming x, y, z, and n are defined and/or Twig's strict variables option is turned off #}
   {# if x then y #}
   {{ x ? y }}
@@ -232,6 +234,7 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
   {{ x ? y : z == n ? 0 : 1 }}
   {# ternary operator: x if x is true, otherwise y #}
   {{ x ?: y }}
+  {% endraw %}
   ```
 
 ### Truth and falsity of zero in Boolean contexts
@@ -246,8 +249,8 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: as in PHP generally, `0` is `False` in Boolean contexts
 
   ```twig
-  {{ false ? 'truthy' : 'falsy' }} {# output: `falsy` #}
-  {{ 0 ? 'truthy' : 'falsy' }}     {# output: `falsy` #}
+  {% raw %}{{ false ? 'truthy' : 'falsy' }} {# output: `falsy` #}
+  {{ 0 ? 'truthy' : 'falsy' }}     {# output: `falsy` #}{% endraw %}
   ```
 
 ## Defining variables
@@ -267,21 +270,21 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `set`
 
   ```twig
-  {% set var = 1 %}
+  {% raw %}{% set var = 1 %}
   {% set anotherVar = 0 %}
   {% set falseVar = false %}
   {{ var ? 2 }}           {# output: `2` #}
   {{ anotherVar ? 2 }}    {# output: null - Twig, unlike PHP, equates 0 with falsehood #}
-  {{ falseVar ? '' : 2 }} {# output `2` #}
+  {{ falseVar ? '' : 2 }} {# output `2` #}{% endraw %}
   ```
 
   Twig can define multiple variables in a single call — just keep in mind that developers not used to this might overlook the multiple declarations!
 
   ```twig
-  {% set x, y, z = 1, 2, 3 %}
+  {% raw %}{% set x, y, z = 1, 2, 3 %}{% endraw %}
   ```
 
-  (A value must be explicitly provided for each variable: `{% set x, y = 1 %}` will error.)
+  (A value must be explicitly provided for each variable: `{% raw %}{% set x, y = 1 %}{% endraw %}` will error.)
 
 ### Line breaks within a variable's value
 
@@ -310,12 +313,12 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: use the `set` tag's form `set x`…`endset` to capture chunks of text
 
   ```twig
-  {% set longVar %}
+  {% raw %}{% set longVar %}{% endraw %}
     <div>
       …
     </div>
-  {% endset %}
-  {{ longVar }}
+  {% raw %}{% endset %}
+  {{ longVar }}{% endraw %}
   ```
 
 ### Dealing with undefined variables
@@ -355,26 +358,26 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
     Especially useful when Twig's `strict variables` option is turned on, in which case referring to an undefined variable will throw an error.
 
     ```twig
-    {# output: Twig_Error_Runtime: Variable "x" does not exist. #}
+    {% raw %}{# output: Twig_Error_Runtime: Variable "x" does not exist. #}
     {{ x }}
     {# output: the content if var is defined #}
     {% if var is defined %}
       …
     {% endif %}
     {# output: `advance` if var is defined, otherwise `fallback` #}
-    {{ var is defined ? advance : fallback }}
+    {{ var is defined ? advance : fallback }}{% endraw %}
     ```
 
   - `??`, the null coalescing operator
 
     ```twig
-    {# output: `var` if it is defined and not null, otherwise `fallback` #}
+    {% raw %}{# output: `var` if it is defined and not null, otherwise `fallback` #}
     {{ var ?? fallback }}
     {# common use cases:
     1. output a variable only if it is defined #}
     {{ var ?? null }}
     {# set a variable with a fallback #}
-    {% set x = y ?? null %}
+    {% set x = y ?? null %}{% endraw %}
     ```
 
 ### Variable interpolation
@@ -389,8 +392,8 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `#{var}`
 
   ```twig
-  {% set x = 1 %}
-  {{ "this is interpolated #{x}" }}{# output: `this is interpolated: 1` #}
+  {% raw %}{% set x = 1 %}
+  {{ "this is interpolated #{x}" }}{# output: `this is interpolated: 1` #}{% endraw %}
   ```
 
 ## Concatenation
@@ -408,11 +411,11 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `~` (tilde). Note that strings and numbers can be freely concatenated.
 
   ```twig
-  {% set string_variable = 'world' %}
+  {% raw %}{% set string_variable = 'world' %}
   {% set number_variable = 2 %}
   {{ 'hello ' ~ string_variable }}   {# output: `hello world` #}
   {{ "example #{number_variable}" }} {# output: `example 2` #}
-  {{ 'example ' ~ 3 }}               {# output: `example 3` #}
+  {{ 'example ' ~ 3 }}               {# output: `example 3` #}{% endraw %}
   ```
 
 ## Iteration (loops)
@@ -434,13 +437,13 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `for i in n`…`endfor`
 
   ```twig
-  {% set items = ['a','b','c'] %}
+  {% raw %}{% set items = ['a','b','c'] %}
   {# output: `...` #}
   {% for i in 0..items.length %}.{% endfor %}
   {# output: `a b c ` #}
   {% for item in items %}
       {{item}}
-  {% endfor %}
+  {% endfor %}{% endraw %}
   ```
 
 ### Using the loop index, 0-indexed
@@ -467,9 +470,9 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `loop.index0`
 
   ```twig
-  {% for item in items %}
+  {% raw %}{% for item in items %}
       {{loop.index0}}. {{item}}
-  {% endfor %}
+  {% endfor %}{% endraw %}
   ```
 
 ### Using the loop index, 1-indexed
@@ -494,9 +497,9 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `loop.index`
 
   ```twig
-  {% for item in items %}
+  {% raw %}{% for item in items %}
       {{loop.index}}. {{item}}
-  {% endfor %}
+  {% endfor %}{% endraw %}
   ```
 
 ### Iterating a certain number of times
@@ -516,13 +519,13 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `for i in n`…`endfor`
 
   ```twig
-  {% set items = ['a','b','c'] %}
+  {% raw %}{% set items = ['a','b','c'] %}
   {# output: `...` #}
   {% for i in 0..items.length %}.{% endfor %}
   {# output: `a b c ` #}
   {% for item in items %}
       {{item}}
-  {% endfor %}
+  {% endfor %}{% endraw %}
   ```
 
 ## Inspecting data
@@ -541,15 +544,15 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
   - The `|json_encode()` filter formats an object's data.
 
     ```twig
-    {# for some object `posts` #}
-    {{ posts|json_encode }}
+    {% raw %}{# for some object `posts` #}
+    {{ posts|json_encode }}{% endraw %}
     ```
 
   - The `dump()` function outputs information about a variable.
 
     ```twig
-    {# for some object `posts` #}
-    {{ dump(posts) }}
+    {% raw %}{# for some object `posts` #}
+    {{ dump(posts) }}{% endraw %}
     ```
 
     *Note:* `dump` must be enabled. Some implementations make it available out of the box (for example, Craft in dev mode).
@@ -566,21 +569,21 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `|slice(start,count)` or `[start:count]`
 
   ```twig
-  {{ [1,2,3,4]|slice(1) }}   {# output: `Array` #}
-  {{ [1,2,3,4]|slice(1,2) }} {# output: `Array` #}
+  {% raw %}{{ [1,2,3,4]|slice(1) }}   {# output: `Array` #}
+  {{ [1,2,3,4]|slice(1,2) }} {# output: `Array` #}{% endraw %}
   ```
 
-  *Note:* The output of the above Twig examples is `Array`, because in Twig the output of `{{ [anArray] }}` is `Array`. If you need to print an array, use `|json_encode`:
+  *Note:* The output of the above Twig examples is `Array`, because in Twig the output of `{% raw %}{{ [anArray] }}{% endraw %}` is `Array`. If you need to print an array, use `|json_encode`:
 
   ```twig
-  {{ [1,2,3,4]|slice(1)|json_encode() }}   {# output: `[2,3,4]` #}
-  {{ [1,2,3,4]|slice(1,2)|json_encode() }} {# output: `[2,3]` #}
+  {% raw %}{{ [1,2,3,4]|slice(1)|json_encode() }}   {# output: `[2,3,4]` #}
+  {{ [1,2,3,4]|slice(1,2)|json_encode() }} {# output: `[2,3]` #}{% endraw %}
   ```
 
   In execution, no special steps are necessary:
 
   ```twig
-  {% set myArray = [1,2,3,4] %}
+  {% raw %}{% set myArray = [1,2,3,4] %}{% endraw %}
   …
   ```
 
@@ -596,7 +599,7 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `[:count]`
 
   ```twig
-  {{ [1,2,3,4][:2]|json_encode() }} {# output: `[1,2]` #}
+  {% raw %}{{ [1,2,3,4][:2]|json_encode() }} {# output: `[1,2]` #}{% endraw %}
   ```
 
 ### Shorthand for everything after the `start` item
@@ -604,7 +607,7 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
 - **Twig**: `[start:]`
 
   ```twig
-  {{ [1,2,3,4][2:]|json_encode() }} {# output: `[3,4]` #}
+  {% raw %}{{ [1,2,3,4][2:]|json_encode() }} {# output: `[3,4]` #}{% endraw %}
   ```
 
 ## Trimming whitespace
@@ -634,17 +637,17 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
   Trim *leading or trailing* whitespace by adding a `-` inside in an opening or close delimiter, respectively:
 
   ```twig
-  {% something -%}
+  {% raw %}{% something -%}
   1
   {%- something_else -%}
   2
-  {%- last_thing %}
+  {%- last_thing %}{% endraw %}
   ```
 
   is equivalent to
 
   ```twig
-  {% something %}1{% something_else %}2{% last_thing %}
+  {% raw %}{% something %}1{% something_else %}2{% last_thing %}{% endraw %}
   ```
 
 ### Trimming space between HTML elements
@@ -654,10 +657,10 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
   Twig doesn't care what language you are compiling to, but it does provide a special `spaceless` tag for use with HTML.
 
   ```twig
-  {% spaceless %}
+  {% raw %}{% spaceless %}{% endraw %}
     <div>…</div>
     <span>…</span>
-  {% endspaceless %}
+  {% raw %}{% endspaceless %}{% endraw %}
   ```
 
   is equivalent to
@@ -671,14 +674,14 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
   - it isn't recursive
 
     ```twig
-    {% spaceless %}
+    {% raw %}{% spaceless %}{% endraw %}
       <div>
         <div>
           …
         </div>
       <div>
       <span>…</span>
-    {% endspaceless %}
+    {% raw %}{% endspaceless %}{% endraw %}
     ```
 
     is equivalent to
@@ -692,11 +695,11 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
   - and content between HTML tags will disrupt it
 
     ```twig
-    {% spaceless %}
+    {% raw %}{% spaceless %}{% endraw %}
       <div>…</div>
       sorry, spaceless
       <span>…</span>
-    {% endspaceless %}
+    {% raw %}{% endspaceless %}{% endraw %}
     ```
 
     is equivalent to
@@ -723,9 +726,9 @@ Both ERB and Twig support "condition `?` iftrue `:` iffalse", and "ifselftrue `?
   Use dot notation or subscript syntax to access attributes of a variable:
 
   ```twig
-  {% set myVar = {hello: 'world'} %}
+  {% raw %}{% set myVar = {hello: 'world'} %}
   {{ myVar.hello }} {# output: world #}
-  {{ myVar['hello'] }} {# output: world #}
+  {{ myVar['hello'] }} {# output: world #}{% endraw %}
   ```
 
 ## Vertical inheritance
@@ -753,46 +756,46 @@ For a `layout` file that pulls in `page`:
   *layout.html.twig*
 
   ```twig
-  {% block myBlock '' %}
+  {% raw %}{% block myBlock '' %}
   {# or #}
   {% block myBlock %}{% endblock %}
   {# or #}
-  {% block myBlock %}{% endblock myBlock %}
+  {% block myBlock %}{% endblock myBlock %}{% endraw %}
   ```
 
   *page.html.twig*
 
   ```twig
-  {% extends 'layout.html.twig' %}
+  {% raw %}{% extends 'layout.html.twig' %}
   {% block myBlock %}
       the content
-  {% endblock %}
+  {% endblock %}{% endraw %}
   ```
 
   or if all the content is a variable *x*, *page.html.twig*
 
   ```twig
-  {% extends 'layout.html.twig' %}
-  {% block myBlock x %}
+  {% raw %}{% extends 'layout.html.twig' %}
+  {% block myBlock x %}{% endraw %}
   ```
 
   or if all the content is a single string, *page.html.twig*
 
   ```twig
-  {% extends 'layout.html.twig' %}
+  {% raw %}{% extends 'layout.html.twig' %}
   {% block myBlock "#{x} content" %}
   {# or #}
   {% extends 'layout.html.twig' %}
-  {% block myBlock x ~ "content" %}
+  {% block myBlock x ~ "content" %}{% endraw %}
   ```
 
   or if all the content is a single literal string, *page.html.twig*
 
   ```twig
-  {% extends 'layout.html.twig' %}
+  {% raw %}{% extends 'layout.html.twig' %}
   {% block myBlock 'the content' %}
   {# or #}
-  {% block myBlock "the content" %}
+  {% block myBlock "the content" %}{% endraw %}
   ```
 
 ### Vertical inheritance with default content in the parent
@@ -822,19 +825,19 @@ For a `layout` file that pulls in `page`:
   *main.html.twig*
 
   ```twig
-  {% block content %}
+  {% raw %}{% block content %}
       default content
       {% block sub_content '' %}
-  {% endblock %}
+  {% endblock %}{% endraw %}
   ```
 
   *override-content.html.twig*
 
   ```twig
-  {% extends 'main.html.twig' %}
+  {% raw %}{% extends 'main.html.twig' %}
   {% block content %}
       the content
-  {% endblock %}
+  {% endblock %}{% endraw %}
   ```
 
   Result of *override-content.html.twig*:
@@ -846,10 +849,10 @@ For a `layout` file that pulls in `page`:
   *override-subcontent.html.twig*
 
   ```twig
-  {% extends 'main.html.twig' %}
+  {% raw %}{% extends 'main.html.twig' %}
   {% block subcontent %}
       the sub-content
-  {% endblock %}
+  {% endblock %}{% endraw %}
   ```
 
   Result of *override-subcontent.html.twig*:
@@ -890,38 +893,38 @@ For a `layout` file that pulls in `page`:
   - `include` tag
 
     ```twig
-    {% include 'path/to/x' %}
+    {% raw %}{% include 'path/to/x' %}{% endraw %}
     ```
 
   - `include` function
 
     ```twig
-    {{ include('path/to/x') }}
+    {% raw %}{{ include('path/to/x') }}{% endraw %}
     ```
 
   The `include` tag passes the entire parent context to the included file by default:
 
   ```twig
-  {% set a = 1 %}
+  {% raw %}{% set a = 1 %}
   {% set b = 2 %}
-  {% include 'path/to/x' %} {# in path/to/x a=1 and b=2 #}
+  {% include 'path/to/x' %} {# in path/to/x a=1 and b=2 #}{% endraw %}
   ```
 
   To pass only certain data, use `include with only`:
 
   ```twig
-  {% set a = 1 %}
+  {% raw %}{% set a = 1 %}
   {% set b = 2 %}
   {% include 'path/to/x' with {a:a} only %}
-  {# in path/to/x a=1 and b does not exist #}
+  {# in path/to/x a=1 and b does not exist #}{% endraw %}
   ```
 
   Rename variables in the `with` (can be combined with `only`):
 
   ```twig
-  {% set a = 1 %}
+  {% raw %}{% set a = 1 %}
   {% include 'path/to/x' with {y:a} %} {# in path/to/x a=1 and y=1 #}
   {% include 'path/to/z' with {y:a} only %}
-  {# in path/to/z y=1 and a does not exist  #}
+  {# in path/to/z y=1 and a does not exist  #}{% endraw %}
   ```
 

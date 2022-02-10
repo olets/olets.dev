@@ -114,7 +114,7 @@ module.exports = function(eleventyConfig) {
 
     // Pre-process *.md files with: (default: `liquid`)
     // Temporarily? disabled. See https://github.com/11ty/eleventy-base-blog/issues/115
-    // markdownTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
 
     // Pre-process *.html files with: (default: `liquid`)
     htmlTemplateEngine: "njk",

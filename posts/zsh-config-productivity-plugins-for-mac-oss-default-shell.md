@@ -16,7 +16,7 @@ id: 229
 
 Apple has switching to **zsh** for the default macOS shell. Zsh has a lot to recommend it, and if the increased attention leads to [zsh support](https://github.com/koalaman/shellcheck/issues/809) in [shellcheck](https://www.shellcheck.net/) zsh scripters everywhere will be thrilled. The downside of zsh is it leaves interactive shell (that is, command line experience, as opposed to writing scripts) configuration up to the use. No fancy user experience like the anomolously named **fish shell** provides by default, no pretty prompt like in GitHub README screenshots, and no guidance about how to customize things. You do get that [sweet sweet zsh array syntax](http://zsh.sourceforge.net/Guide/zshguide05.html) immediately, but as the manual acknowledges that's not what everyone comes for: the discussion of arrays begins,
 
-"This chapter will appeal above all to people who are excited by the fact that `print ${array[(r)${(l.${#${(O@)array//?/X}[1]}..?.)}]}` prints out the longest element of the array `$array`. For the overwhelming majority that forms the rest of the population…"
+"This chapter will appeal above all to people who are excited by the fact that `{% raw %}print ${array[(r)${(l.${#${(O@)array//?/X}[1]}..?.)}]}{% endraw %}` prints out the longest element of the array `$array`. For the overwhelming majority that forms the rest of the population…"
 
 (_Zsh arrrays are so cool!_) This guide is for that majority. We will see how to give the interactive terminal a highly functional prompt and will configure zsh to
 
