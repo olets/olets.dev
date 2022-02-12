@@ -45,7 +45,11 @@ eleventyNavigation:
     <h2 class="heading-2">Latest {% if maxPosts > 1 %}Posts{% else %}Post{% endif %}</h2>
 
     <div class="mt-8 text-3xl">
-      {{ Text({ content: "See <a href=\"{{ '/posts/' | url }}\">all posts</a>."|safe }) }}
+      {% set postsText %}
+        See <a href="{{ "/posts"|url|absoluteUrl(metadata.url) }}">all posts</a>.
+      {% endset %}
+
+      {{ Text({ content: postsText }) }}
     </div>
 
     {{ PostsList({
@@ -55,7 +59,7 @@ eleventyNavigation:
     }) }}
 
     <div class="mt-8 text-3xl">
-      {{ Text({ content: "See <a href=\"{{ '/posts/' | url }}\">all posts</a>."|safe }) }}
+      {{ Text({ content: postsText }) }}
     </div>
   </section>
 
