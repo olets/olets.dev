@@ -17,7 +17,7 @@ imageDetails:
 id: 229
 ---
 
-*This is article is part of a series on interactive shells. The next article in the series is [Try Out Fish For Your Command Line Shell](/posts/try-out-fish-for-your-command-line-shell).*
+*This is article is part of a series on interactive shells. The next article in the series is [Try Out Fish For Your Command Line Shell]({{ "/posts/try-out-fish-for-your-command-line-shell"|url|absoluteUrl(metadata.url) }}).*
 
 
 Apple has switching to **zsh** for the default macOS shell. Zsh has a lot to recommend it, and if the increased attention leads to [zsh support](https://github.com/koalaman/shellcheck/issues/809) in [shellcheck](https://www.shellcheck.net/) zsh scripters everywhere will be thrilled. The downside of zsh is it leaves interactive shell (that is, command line experience, as opposed to writing scripts) configuration up to the use. No fancy user experience like the anomolously named **fish shell** provides by default, no pretty prompt like in GitHub README screenshots, and no guidance about how to customize things. You do get that [sweet sweet zsh array syntax](http://zsh.sourceforge.net/Guide/zshguide05.html) immediately, but as the manual acknowledges that's not what everyone comes for: the discussion of arrays begins,
