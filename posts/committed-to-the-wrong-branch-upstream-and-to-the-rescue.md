@@ -70,16 +70,6 @@ I like to use all possible natively supported shorthands. There are two broad mo
 
 First up for our scenario: the `-` shorthand, which refers to the previously checked out branch. There are a few places we can't use it, but it helps a lot: (🎉 marks wins from `-`)
 
-<table>
-<thead>
-<tr>
-<th>v2</th>
-<th>v1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
 
 ```shell
 # USING THE "-" SHORTHAND
@@ -101,35 +91,6 @@ git merge --no-ff --no-edit -        # 🎉
 git checkout -                       # 🎉
 # on feature and ready for more feature commits
 ```
-
-</td>
-<td>
-
-```shell
-# ORIGINAL
-
-git checkout feature
-# hack hack hack
-git push
-git checkout qa-environment
-git merge --no-ff --no-edit feature
-git push
-# hack hack hack
-# whoops
-git checkout feature
-git cherry-pick origin/qa-environment..qa-environment
-git push
-git checkout qa-environment
-git reset --hard origin/qa-environment
-git merge --no-ff --no-edit feature
-git checkout feature
-# ready for more feature commits
-```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 That's as far as `-` gets us. We cannot use it when cherry-picking a range
 
@@ -187,15 +148,6 @@ git cherry-pick origin/qa-environment..@{-1}
 
 Here's where we are (🎉 marks wins from `-`, 💥 marks the win from `@{-1}`)
 
-<table>
-<thead>
-<tr>
-<th>v3</th>
-<th>v1</th>
-</tr>
-<tbody>
-<tr>
-<td>
 
 ```shell
 # USING - AND @{-1}
@@ -217,35 +169,6 @@ git merge --no-ff --no-edit -                # 🎉
 git checkout -                               # 🎉
 # on feature and ready for more feature commits
 ```
-
-</td>
-<td>
-
-```shell
-# ORIGINAL
-
-git checkout feature
-# hack hack hack
-git push
-git checkout qa-environment
-git merge --no-ff --no-edit feature
-git push
-# hack hack hack
-# whoops
-git checkout feature
-git cherry-pick origin/qa-environment..qa-environment
-git push
-git checkout qa-environment
-git reset --hard origin/qa-environment
-git merge --no-ff --no-edit feature
-git checkout feature
-# ready for more feature commits
-```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 One down, two to go: we're still relying on memory for the remote's name and the remote branch's name, and we're still typing both out in full. Can we replace those with generic shorthands?
 
@@ -300,16 +223,6 @@ In the common workflow where a branch pulls from and pushes to the same branch, 
 Going back to our scenario, it means short, portable commands with a minimum human memory footprint. (🎉 marks wins from `-`, 💥 marks the win from `@{-1}`, 😎 marks the wins from `@{u}`.)
 
 
-<table>
-<thead>
-<tr>
-<th>v3</th>
-<th>v1</th>
-</tr>
-<tbody>
-<tr>
-<td>
-
 ```shell
 # USING - AND @{-1} AND @{u}
 
@@ -330,35 +243,6 @@ git merge --no-ff --no-edit -    # 🎉
 git checkout -                   # 🎉
 # on feature and ready for more feature commits
 ```
-
-</td>
-<td>
-
-```shell
-# ORIGINAL
-
-git checkout feature
-# hack hack hack
-git push
-git checkout qa-environment
-git merge --no-ff --no-edit feature
-git push
-# hack hack hack
-# whoops
-git checkout feature
-git cherry-pick origin/qa-environment..qa-environment
-git push
-git checkout qa-environment
-git reset --hard origin/qa-environment
-git merge --no-ff --no-edit feature
-git checkout feature
-# ready for more feature commits
-```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 ## Make the things you repeat the easiest to do
 
