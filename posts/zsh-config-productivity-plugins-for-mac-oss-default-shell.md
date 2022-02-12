@@ -8,6 +8,12 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/zsh-config-productivity-plugins-for-mac-oss-default-shell/
+imageFilename: shells.jpg
+imageDetails:
+  title: "Illustration of shells"
+  license:
+    name: Public domain
+  url: https://wellcomecollection.org/works/uy4zm9t9
 id: 229
 ---
 

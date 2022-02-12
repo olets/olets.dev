@@ -9,7 +9,13 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/automating-build-deploy-ci-cd-with-github-actions/
-#imageFilename: post-github-actions.jpg
+imageFilename: automatic-lathe.jpg
+imageDetails:
+  author: Rousseau, Nicolas Louis
+  license:
+    name: Public domain
+  title: "Carpentry: an automatic lathe in plan and elevations, with examples of finished turning. Engraving by N. L. Rousseau after Gallet"
+  url: https://wellcomecollection.org/works/phf9uvuq
 id: 2474
 ---
 

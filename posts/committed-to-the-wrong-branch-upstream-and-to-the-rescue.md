@@ -8,7 +8,13 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/committed-to-the-wrong-branch-upstream-and-to-the-rescue/
-# imageFilename: post-gitrevisions.jpg
+imageFilename: rosewood-tree.jpg
+imageDetails:
+  author: Reede tot Drakestein, Hendrik van, 1637?-1691.
+  license:
+    name: Public domain
+  title: "Rosewood tree (a species of Dalbergia): branch with flowers and pods and separate sections of flowers, pod and seeds. Coloured line engraving."
+  url: https://wellcomecollection.org/works/bhb5cy5v
 id: 20212
 ---
 

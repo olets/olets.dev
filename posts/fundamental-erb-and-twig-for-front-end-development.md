@@ -11,6 +11,13 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/fundamental-erb-and-twig-for-front-end-development/
+imageFilename: crocus.jpg
+imageDetails:
+  author: Auer, Alois, 1813-1869
+  license:
+    name: Public domain
+  title: "Two entire flowering plants, a yellow crocus (Crocus species) and a herb Paris (Paris quadrifolia). Colour nature print by A. Auer, c. 1853"
+  url: https://wellcomecollection.org/works/bqsnr8d4
 id: 14378
 ---
 

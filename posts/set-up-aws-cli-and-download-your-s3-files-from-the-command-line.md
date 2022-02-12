@@ -10,6 +10,12 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/set-up-aws-cli-and-download-your-s3-files-from-the-command-line/
+imageFilename: three-men.jpg
+imageDetails:
+  license:
+    name: Public domain
+  title: Three men standing. Woodcut
+  url: https://wellcomecollection.org/works/jqkvjr63
 id: 29752
 ---
 

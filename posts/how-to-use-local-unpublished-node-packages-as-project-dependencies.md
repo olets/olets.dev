@@ -11,6 +11,13 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/how-to-use-local-unpublished-node-packages-as-project-dependencies/
+imageFilename: tea-crate.jpg
+imageDetails:
+  author: Auer, Alois, 1813-1869
+  license:
+    name: Public domain
+  title: "A man writes on sealed crates of tea, ready for export. Painting by a Chinese artist, ca. 1850"
+  url: https://wellcomecollection.org/works/dj3vse2z
 id: 10426
 ---
 

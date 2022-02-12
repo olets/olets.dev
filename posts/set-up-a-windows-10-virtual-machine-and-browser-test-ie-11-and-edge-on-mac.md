@@ -9,6 +9,12 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/set-up-a-windows-10-virtual-machine-and-browser-test-ie-11-and-edge-on-mac/
+imageFilename: hotel-real-santiago-de-campostela.jpg
+imageDetails:
+  license:
+    name: Public domain
+  title: "Hospital Real, Santiago de Compostela: view of the courtyard showing the fountain. Photograph, ca.1900"
+  url: https://wellcomecollection.org/works/qda5ch4n
 id: 20537
 ---
 

@@ -11,6 +11,13 @@ original:
   source: newmediacampaigns.com
   url: https://www.newmediacampaigns.com/blog/sticking-to-your-palette-regardless-of-opacity
 id: 5225
+imageFilename: gorguet-painter.jpg
+imageDetails:
+  author: Gorguet, Auguste-François-Marie, 1862-1927
+  title: "A seated artist painting at his easel. Process print after A.F.M. Gorguet"
+  license:
+    name: Public domain
+  url: https://wellcomecollection.org/works/f6z8xz8d
 ---
 
 A strong, cohesive color palette is key when coming up with a visual design. Colors influence a viewer's emotions and so set the mood.[1](https://www.newmediacampaigns.com/blog/sticking-to-your-palette-regardless-of-opacity#footnote-1) Along with typography, color scheme is important to branding and creating corporate identity. Transparency—a common feature of modern web design—affects color appearance and so can add unwanted variation into a site's palette, but this change can be accounted for by calculating a new starting color.

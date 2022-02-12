@@ -8,7 +8,13 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/try-out-fish-for-your-command-line-shell/
-#imageFilename: post-fish-shell.jpg
+imageFilename: das-fish.jpg
+imageDetails:
+  author: Das, Bhawani
+  title: "Fish. Watercolour by Bhawani Das, 1777/1783"
+  license:
+    name: Public domain
+  url: https://wellcomecollection.org/works/s8zp7m9r
 id: 11744
 ---
 

@@ -10,7 +10,13 @@ layout: layouts/post.njk
 original:
   source: viget.com
   url: https://www.viget.com/articles/cli-equivalents-for-common-mamp-pro-and-sequel-pro-tasks/
-#imageFilename: post-mamp-mysql-cli.jpg
+imageFilename: gessner-elephant.jpg
+imageDetails:
+  author: Gessner, Conrad, 1516-1565
+  license:
+    name: Public domain
+  title: "An elephant. Woodcut after C. Gessner"
+  url: https://wellcomecollection.org/works/wfktrkr3
 id: 5232
 ---
 
