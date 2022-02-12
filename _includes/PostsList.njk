@@ -1,6 +1,5 @@
 {% macro PostsList(props = {}) %}
-  {% from "Card.njk" import Card %}
-  {% from "Text.njk" import Text %}
+  {% from "PostCard.njk" import PostCard %}
 
   {% set classes = null %}
   {% if props.classes %}
