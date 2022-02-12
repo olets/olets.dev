@@ -4,13 +4,8 @@
 
 @layer base {
   @font-face {
-    font-family: "Blocked Off";
-    src: url(BlockedOff-subset.woff2) format("woff2");
-  }
-  
-  @font-face {
     font-family: "Hey August";
-    src: url(HeyAugust-subset.woff2) format("woff2");
+    src: url(../fonts/HeyAugust-subset.woff2) format("woff2");
   }
 
   a {
@@ -21,10 +16,20 @@
     @apply font-bold not-italic;
   }
 
-  svg {
-    path {
-      fill: currentColor;
-    }
+  svg path {
+    fill: currentColor;
+  }
+
+  .shiki {
+    @apply !bg-neutral-50 relative;
+  }
+
+  .shiki .language-id {
+    @apply select-none text-black text-right;
+  }
+
+  .shiki .language-id::before {
+    content: "language: ";
   }
 }
 
@@ -39,5 +44,15 @@
 
   .heading-2 {
     @apply font-serif text-5xl md:text-6xl lg:text-8xl;
+  }
+
+  .heading-3 {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl;
+  }
+}
+
+@layer utilities {
+  .markdown-anchor {
+    @apply absolute no-underline opacity-50 p-4 focus:opacity-100 hover:opacity-100 transition text-lg font-sans right-full top-1/2 -translate-y-1/2;
   }
 }

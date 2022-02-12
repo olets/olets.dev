@@ -1,12 +1,22 @@
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
+const typography = require('@tailwindcss/typography');
 
 module.exports = {
-  content: ['./src/data/data.yaml', './src/views/**/*.twig'],
+  content: ['**/*.njk', './.eleventy.js'],
+  safelist: ['font-sans', 'shiki'],
   theme: {
     extend: {
       aspectRatio: {
         card: '1280 / 640',
+      },
+      colors: {
+        black: "#474747",
+        accent: colors.emerald,
+        link: {
+          ...colors.blue,
+          DEFAULT: colors.blue['500'],
+        },
       },
       fontFamily: {
         serif: [
@@ -14,19 +24,23 @@ module.exports = {
           ...defaultTheme.fontFamily.serif,
         ],
       },
-      colors: {
-        black: "#474747",
-        link: {
-          ...colors.blue,
-          DEFAULT: colors.blue['500'],
-        },
-      },
       ringColor: ({ theme }) => ({
         DEFAULT: theme('colors.link.DEFAULT'),
       }),
       textDecorationColor: ({ theme }) => ({
         ...theme('colors'),
       }),
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            "--tw-prose-bullets": theme('colors.accent.400'),
+            th: {
+              textTransform: 'uppercase',
+            },
+          },
+        },
+      }),
     },
   },
+  plugins: [ typography ],
 }
