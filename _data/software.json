@@ -4,20 +4,20 @@
       {
           "description": "Auto-expanding abbreviations for zsh",
           "imageFilename": "zsh-abbr.jpg",
-          "link": "https://github.com/olets/zsh-abbr",
+          "link": "https://zsh-abbr.olets.dev",
           "title": "zsh-abbr"
+      },
+      {
+          "description": "Feature rich, high performance Git-aware zsh theme",
+          "imageFilename": "hometown.jpg",
+          "link": "https://hometown-prompt.olets.dev",
+          "title": "Hometown Prompt"
       },
       {
           "description": "Automate the rebasing of Git branches and creation of stage branches",
           "imageFilename": "git-replay.jpg",
           "link": "https://github.com/olets/git-replay",
           "title": "git-replay"
-      },
-      {
-          "description": "Feature rich, high performance Git-aware zsh theme",
-          "imageFilename": "hometown.jpg",
-          "link": "https://github.com/olets/hometown-prompt",
-          "title": "Hometown Prompt"
       },
       {
           "description": "Configurable set of components for creating feature rich, high performance Git-aware zsh themes with minimal coding",
