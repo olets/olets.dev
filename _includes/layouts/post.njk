@@ -43,14 +43,36 @@ templateClass: tmpl-post
   </div>
 
   {% if imageFilename %}
-    {{ Image({
-      filename: imageFilename,
-      imgixConfig: {
-        ar: "16:9",
-        fit: "crop",
-        w: 1000
-      }
-    }) }}
+    <figure>
+      {{ Image({
+        filename: imageFilename,
+        imgixConfig: {
+          ar: "16:9",
+          fit: "facearea",
+          w: 1000
+        }
+      }) }}
+      
+      <figcaption class="mt-1 opacity-80 text-xs">
+        {% if imageDetails.title %}{{ imageDetails.title }}.{% endif %}
+
+        {% if imageDetails.author %}{{ imageDetails.author }}.{% endif %}
+        
+        {% if imageDetails.license and imageDetails.license.title %}
+          {% if imageDetails.license.url %}
+            <a href="{{ imageDetails.license.url | url }}">
+          {%- endif -%}
+          
+          {{ imageDetails.license.title -}}
+
+          {% if imageDetails.license.url -%}
+            </a>
+          {%- endif -%}
+          .
+        {% endif %}
+        
+        {% if imageDetails.url %}<a href="{{ imageDetails.url|url }}">Source</a>.{% endif %}
+    </figure>
   {% endif %}
 
   {% set proseContent %}
