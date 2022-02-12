@@ -3,7 +3,7 @@ version: 1.0.0
 description: Source for olets.dev
 main: index.js
 scripts:
-  build: pnpm build:eleventy && pnpm build:tailwind && pnpm build:fonts
+  build: pnpm clean && pnpm build:eleventy && pnpm build:tailwind && pnpm build:fonts
   build:eleventy: ELEVENTY_PRODUCTION=true eleventy
   build:fonts: >-
     pnpm glyphhanger _site/*.html --subset=_site/fonts/HeyAugust.woff2
@@ -11,9 +11,8 @@ scripts:
   build:tailwind: >-
     NODE_ENV=production pnpm tailwind -i css/index.css -c tailwind.config.js -o
     _site/css/index.css --minify
-  watch: eleventy --watch
+  clean: rm -rf _site
   dev: pnpm dev:clean && pnpm dev:fonts && pnpm dev:eleventy & pnpm dev:tailwind
-  dev:clean: rm -rf _site
   debug: DEBUG=* eleventy
   dev:eleventy: eleventy --serve
   dev:fonts: >-
