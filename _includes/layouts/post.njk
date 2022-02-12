@@ -21,7 +21,7 @@ templateClass: tmpl-post
 
     <div class="opacity-80">Posted <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></div>
 
-    {% if tags %}
+    {# {% if tags %}
       <div>
         <span class="font-bold">Tags:</span>
 
@@ -35,7 +35,7 @@ templateClass: tmpl-post
           {% endfor %}
         </ul>
       </div>
-    {% endif %}
+    {% endif %} #}
 
     {% if original.source and original.url %}
       <p class="italic">A version of this post originally appeared on <a href="{{ original.url | url }}">{{ original.source }}</a></p>

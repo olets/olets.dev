@@ -30,12 +30,12 @@
           {% endset %}
 
           {% set postscript %}
-            <div class="flex flex-wrap gap-2">
+            {# <div class="flex flex-wrap gap-2">
               {% for tag in post.data.tags | filterTagList %}
                 {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
                 <a href="{{ tagUrl | url }}" class="post-tag">#{{ tag }}</a>
               {% endfor %}
-            </div>
+            </div> #}
           {% endset %}
 
           {{ Card({
