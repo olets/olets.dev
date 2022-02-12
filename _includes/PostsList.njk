@@ -19,32 +19,7 @@
   <div>
     <ol reversed class="gap-12 grid mt-8 {{ classes }}" style="counter-reset: start-from {{ (counterStart or postslist.length) + 1 }}">
       {% for post in posts %}
-        <li>
-          {% set description %}
-            {% if post.date %}
-              <time class="block my-2 text-sm uppercase" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-            {% endif %}
-
-            <p>{{ post.data.description }}</p>
-          {% endset %}
-
-          {% set postscript %}
-            {# <div class="flex flex-wrap gap-2">
-              {% for tag in post.data.tags | filterTagList %}
-                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                <a href="{{ tagUrl | url }}" class="post-tag">#{{ tag }}</a>
-              {% endfor %}
-            </div> #}
-          {% endset %}
-
-          {{ Card({
-            description: description|safe,
-            imageFilename: post.data.imageFilename,
-            link: post.url,
-            postscript: postscript|safe,
-            title: post.data.title
-          }) }}
-        </li>
+        <li>{{ PostCard({ post: post }) }}</li>
       {% endfor %}
     </ol>
   </div>
