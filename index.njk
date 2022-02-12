@@ -63,14 +63,14 @@ eleventyNavigation:
   </section>
 
   <section class="space-y-10 lg:space-y-16" id="software">
-    <h2 class="heading-2">{{ openSource.heading }}</h2>
+    <h2 class="heading-2">{{ software.heading }}</h2>
 
     <div class="text-3xl">
       {{ Text({ content: softwareText }) }}
     </div>
 
     <div class="gap-12 grid mt-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-2">
-      {% for card in openSource.items %}
+      {% for card in software.items %}
         <div>
           {{ Card(card) }}
         </div>
