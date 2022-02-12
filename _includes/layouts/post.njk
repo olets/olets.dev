@@ -4,7 +4,7 @@ templateClass: tmpl-post
 ---
 
 {% from "Image.njk" import Image %}
-{% from "PostNav.njk" import PostNav %}
+{% from "PostCard.njk" import PostCard %}
 {% from "Prose.njk" import Prose %}
 
 {% set nextPost = null %}
@@ -81,8 +81,35 @@ templateClass: tmpl-post
 
   <div>{{ Prose({ content: proseContent }) }}</div>
 
-  {{ PostNav({
-    nextPost: nextPost,
-    previousPost: previousPost
-  })}}
+  {% if nextPost or previousPost %}
+    <section class="border-t mt-20 p-0 pt-10">
+      <h2 class="sr-only">Related Posts</h2>
+
+      <div class="gap-12 grid md:grid-cols-2 lg:grid-cols-3 justify-between w-full">
+        {% if nextPost %}
+          <div>
+            <div class="heading-3 mb-8">Next</div>
+
+            {{ PostCard({ post: nextPost }) }}
+          </div>
+        {% endif %}
+
+        {% if nextPost and previousPost %}
+          <div class="hidden lg:block"></div>
+        {% endif %}
+
+        {% if previousPost %}
+          <div>
+            <div class="heading-3 mb-8">Previous</div>
+            
+            {{ PostCard({ post: previousPost }) }}
+          </div>
+        {% endif %}
+      </div>
+
+      <p class="mt-20 text-3xl">
+        <a href="{{ '/posts/' | url }}">See All Posts</a>
+      </p>
+    </section>
+  {% endif %}
 </div>
