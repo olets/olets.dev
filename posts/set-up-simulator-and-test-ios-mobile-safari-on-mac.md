@@ -18,7 +18,7 @@ imageDetails:
   url: https://www.rootsimple.com/2015/02/picture-sundays-super-bowl-edition/
 ---
 
-*This article is part of a series on running cross-browser tests directly on your primary computer. The next in the series is [Set Up a Windows 10 Virtual Machine and Run Internet Explorer 11 and Edge on Mac or Linux]({{ "/posts/set-up-a-windows-10-virtual-machine-and-browser-test-ie-11-and-edge-on-mac/"|url|absoluteUrl(metadata.url) }}).*
+*This article is part of a series on running cross-browser tests directly on your primary computer. The next in the series is [Set Up a Windows 10 Virtual Machine and Run Internet Explorer 11 and Edge on Mac or Linux]({{ "/posts/set-up-a-windows-10-virtual-machine-and-browser-test-ie-11-and-edge-on-mac/"|url }}).*
 
 ------
 

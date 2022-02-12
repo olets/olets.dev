@@ -18,7 +18,7 @@ imageDetails:
 id: 20537
 ---
 
-*This article is part of a series on running cross-browser tests directly on your primary computer. The first in the series is [Set Up Simulator and Test iOS Mobile Safari on Mac]({{ "/posts/set-up-simulator-and-test-ios-mobile-safari-on-mac"|url|absoluteUrl(metadata.url) }}).*
+*This article is part of a series on running cross-browser tests directly on your primary computer. The first in the series is [Set Up Simulator and Test iOS Mobile Safari on Mac]({{ "/posts/set-up-simulator-and-test-ios-mobile-safari-on-mac"|url }}).*
 
 ------
 
