@@ -34,7 +34,7 @@
       {
           "description": "Keep on top of your terminal tabs by titling each after its directory, its directory's parent, and its ongoing command if one is running",
           "imageFilename": "zsh-window-title.jpg",
-          "link": "https://github.com/olets/zsh-window-title.jpg",
+          "link": "https://github.com/olets/zsh-window-title",
           "title": "zsh-window-title"
       }
   ],
