@@ -91,7 +91,8 @@ module.exports = function(eleventyConfig) {
 
     if (href && !href.match(externalLinkRegExp)) {
       tokens[idx].attrPush([ 'rel', 'noopener noreferrer' ])
-      console.log(`Added rel="noopener noreferrer" to ${href}`)
+      tokens[idx].attrPush([ 'class', 'external-link' ])
+      console.log(`Added \`rel="noopener noreferrer" class="external-link"\` to ${href}`)
     }
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
