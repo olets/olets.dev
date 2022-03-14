@@ -5,7 +5,19 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const mdIterator = require('markdown-it-for-inline');
 const shikiTwoslash = require("eleventy-plugin-shiki-twoslash");
+
+let metadata = null;
+
+fs.readFile("./_data/metadata.json", 'utf8', (err, data) => {
+  if (err) {
+    console.log("Error reading metadata in .eleventy.js");
+    console.warn(err);
+  } else {
+    metadata = JSON.parse(data);
+  }
+});
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget('tailwind.config.js')
@@ -73,6 +85,15 @@ module.exports = function(eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true
+  }).use(mdIterator, 'url_new_win', 'link_open', function (tokens, idx) {
+    const [_attrName, href] = tokens[idx].attrs.find(attr => attr[0] === 'href')
+    const externalLinkRegExp = new RegExp(`^(\/|#|${metadata.url})`)
+
+    if (href && !href.match(externalLinkRegExp)) {
+      tokens[idx].attrPush([ 'rel', 'noopener noreferrer' ])
+      tokens[idx].attrPush([ 'class', 'external-link' ])
+      console.log(`Added \`rel="noopener noreferrer" class="external-link"\` to ${href}`)
+    }
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: "before",
