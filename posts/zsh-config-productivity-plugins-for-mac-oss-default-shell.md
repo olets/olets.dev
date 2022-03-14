@@ -45,7 +45,7 @@ These are the steps to follow if you need to install Homebrew. Run `brew --versi
 
 1. Download Xcode from the App Store https://itunes.apple.com/us/app/xcode/id497799835?mt=12
 
-2. Download the Xcode command line tools from [https://developer.apple.com/download/more/?=command%20line%20tools](https://developer.apple.com/download/more/?=command line tools). If you don't have a developer account, you'll need to sign up for one (it's free).
+2. Download the Xcode command line tools from https://developer.apple.com/download/more/?=command%20line%20tools. If you don't have a developer account, you'll need to sign up for one (it's free).
 
 3. Install Homebrew by running the command shown at https://brew.sh/.
 
@@ -327,7 +327,7 @@ As above, run these commands or manually add everything between `echo '` and `' 
 
 This plugin will suggest previously run commands as you type. Accept the suggestion by pressing the right arrow key.
 
-[https://github.com/zsh-users/zsh-autosuggestions ](https://github.com/zsh-users/zsh-autosuggestions)
+https://github.com/zsh-users/zsh-autosuggestions
 
 #### zsh-completions
 
