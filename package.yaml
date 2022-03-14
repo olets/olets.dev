@@ -43,6 +43,7 @@ devDependencies:
   luxon: ^2.3.0
   markdown-it: ^12.3.2
   markdown-it-anchor: ^8.4.1
+  markdown-it-for-inline: ^0.1.1
   postcss: ^8.4.5
   tailwindcss: ^3.0.18
   yaml: ^1.10.2
