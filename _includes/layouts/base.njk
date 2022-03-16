@@ -1,3 +1,4 @@
+{% from "ExternalLink.njk" import ExternalLink -%}
 {% from "ImgixUrl.njk" import ImgixUrl -%}
 
 {% set pageTitle = title or metadata.title %}
@@ -76,7 +77,12 @@
       © Copyright Henry Bley-Vroman, 2022-present.
 
       <p>
-        You can <a href="{{ footer.sourceLink }}">look at the source</a>.
+        You can
+        {{ ExternalLink({
+          content: "look at the source",
+          external: true,
+          href: "footer.sourceLink"
+        }) }}.
       </p>
     </footer>
 

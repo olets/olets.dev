@@ -1,0 +1,20 @@
+{% macro ExternalLink(props = {}) %}
+  {% set href = null %}
+  {% if props.href %}
+    {% set href = props.href %}
+  {% endif %}
+
+  {% set content = href %}
+  {% if props.content %}
+    {% set content = props.content %}
+  {% endif %}
+
+  <a
+    class="external-link"
+    href="{{ href }}"
+    rel="noopener noreferrer"
+  >
+    {{ content }}
+  </a>
+{% endmacro %}
+

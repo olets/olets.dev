@@ -6,6 +6,7 @@ eleventyNavigation:
 ---
 
 {% from "Card.njk" import Card %}
+{% from "ExternalLink.njk" import ExternalLink %}
 {% from "PostsList.njk" import PostsList %}
 {% from "Text.njk" import Text %}
 
@@ -15,7 +16,10 @@ eleventyNavigation:
 {% endset %}
 
 {% set softwareText %}
-  See <a href="https://github.com/olets">all projects</a>.
+  See {{ ExternalLink({
+    content: "all projects",
+    href: "https://github.com/olets"
+  }) }}.
 {% endset %}
 
 <header class="container mx-auto space-y-12 md:space-y-16 lg:space-y-20">
@@ -28,7 +32,38 @@ eleventyNavigation:
       <h1 class="heading-1">Henry <span class="whitespace-nowrap">Bley-Vroman</span></h1>
 
       <div class="mt-2 md:mt-4 lg:mt-8">
-        {{ Text({ content: bio.summary }) }}
+        {% set summary %}
+          (pronouns he/him, pronounced {{ ExternalLink({
+            content: "/ˈhɛn.ɹi blaɪ ˈvɹəʊmən/",
+            external: true,
+            href: "http://ipa-reader.xyz/?text=%CB%88h%C9%9Bn%C9%B9i%20bla%C9%AA%20%CB%88v%C9%B9%C9%99%CA%8Am%C9%99n"
+          }) }}) builds things you see on the web, creates tools to improve other builders' daily experience, teaches and mentors at work and in the tech community, and strives to support safe, kind, fair, and welcoming cultures. At {{ ExternalLink({
+            content: "Viget",
+            external: true,
+            href: "http://viget.com"
+          }) }} he is an established Senior UI Developer ({{ ExternalLink({
+            content: "bio and articles",
+            external: true,
+            href: "https://www.viget.com/about/team/hbley-vroman/"
+          }) }}), and is co-chair of the company DEI Advisory Committee. Previously: {{ ExternalLink({
+            content: "NMC",
+            external: true,
+            href: "http://newmediacampaigns.com"
+          }) }}, {{ ExternalLink({
+            content: "ReCYCLEry",
+            external: true,
+            href: "https://www.recyclery.org/"
+          }) }} community bike mechanic and advocate, {{ ExternalLink({
+            content: "Boston University",
+            external: true,
+            href: "https://www.bu.edu/psych/academics/phd/bbc/"
+          }) }} doctoral candidate in cognitive neurobiology. Sometimes fiddler, publisher, and woodturner. Online as olets (pronounced {{ ExternalLink({
+            content: "/oʊ lɛts/",
+            external: true,
+            href: "http://ipa-reader.xyz/?text=o%CA%8A%20l%C9%9Bts"
+          }) }}). 
+        {% endset %}
+        {{ Text({ content: summary }) }}
       </div>
     </div>
   </div>

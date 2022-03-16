@@ -3,6 +3,7 @@ layout: layouts/sidebar.njk
 templateClass: tmpl-post
 ---
 
+{% from "ExternalLink.njk" import ExternalLink %}
 {% from "Image.njk" import Image %}
 {% from "PostCard.njk" import PostCard %}
 {% from "Prose.njk" import Prose %}
@@ -38,7 +39,13 @@ templateClass: tmpl-post
     {% endif %} #}
 
     {% if original.source and original.url %}
-      <p class="italic">A version of this post originally appeared on <a href="{{ original.url | url }}">{{ original.source }}</a></p>
+      <p class="italic">
+        A version of this post originally appeared on
+        {{ ExternalLink({
+          content: original.source,
+          href: original.url
+        }) }}
+      </p>
     {% endif %}
   </div>
 

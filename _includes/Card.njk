@@ -4,6 +4,11 @@
     {% set description = props.description %}
   {% endif %}
 
+  {% set external = null %}
+  {% if props.external %}
+    {% set external = props.external %}
+  {% endif %}
+
   {% set imageFilename = null %}
   {% if props.imageFilename %}
     {% set imageFilename = props.imageFilename %}
@@ -33,6 +38,7 @@
           <a
             class="absolute focus:outline-none inset-0 peer rounded-2xl"
             href="{{ link|url }}"
+            {% if external %}rel="noopener noreferrer"{% endif %}
           >
             <div class="sr-only">{{ title }}</div>
           </a>
@@ -70,7 +76,7 @@
           {% if title %}
             <em
               aria-hidden="true"
-              class="block font-semibold underline"
+              class="block font-semibold underline {% if external %}external-link{% endif %}"
             >
               <span>{{ title }}</span>
             </em>
