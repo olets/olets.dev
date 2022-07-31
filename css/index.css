@@ -42,8 +42,12 @@
     @apply absolute bg-center bg-contain bg-groundhog inset-10 sm:inset-12 md:inset-20 lg:inset-24 xl:inset-32 p-5 sm:p-10 md:p-20 lg:p-32 xl:p-40;
   }
 
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-link to-accent-500;
+  }
+
   .heading-1 {
-    @apply font-serif text-5xl md:text-6xl lg:text-9xl;
+    @apply font-serif text-5xl text-gradient md:text-6xl lg:text-9xl;
   }
 
   .heading-2 {
